@@ -1,13 +1,38 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/info/info"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "P图帮",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "动态",
+        "iconPath":"icons/ic_chat_bubble_outline_black_48dp.png",
+        "selectedIconPath":"icons/ic_chat_black_48dp.png"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "text": "消息",
+        "iconPath":"icons/ic_notifications_none_black_48dp.png",
+        "selectedIconPath":"icons/ic_notifications_black_48dp.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath":"icons/ic_person_outline_black_48dp.png",
+        "selectedIconPath":"icons/ic_person_black_48dp.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
