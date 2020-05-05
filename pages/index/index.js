@@ -7,7 +7,19 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    test:{
+      "user":{
+        "name":"wizeaz",
+        "profilePhotoUrl":"/resources/icons/ic_chat_black_48dp.png"
+      },
+      "imgUrl":"/resources/icons/ic_chat_bubble_outline_black_48dp.png",
+      "like":12,
+      "comments_num":12,
+      "comments":[
+        {"userName":"wizeaz", "content":"123"}
+      ]
+    }
   },
   //事件处理函数
   bindViewTap: function() {

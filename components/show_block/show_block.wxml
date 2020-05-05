@@ -1,0 +1,21 @@
+<!--components/show_block.wxml-->
+<view class="block">
+  <view class="block-header">
+    <image class="shape-circle profile-photo" src="{{blockInfo.user.profilePhotoUrl}}"> </image>
+    {{blockInfo.user.name}}
+  </view>
+  <image src="{{blockInfo.imgUrl}}"> </image>
+  <view class="block-tool-bar">
+  点赞数:{{blockInfo.like}}
+  评论数:{{blockInfo.comments_num}}
+  <view class="span right-most"> 分享 </view>
+  </view>
+  <view class="block-comments">
+  <view wx:for="{{blockInfo.comments}}">
+  <em>{{item.userName}}</em>
+  {{item.content}}
+  </view>
+</view>
+
+
+</view>
