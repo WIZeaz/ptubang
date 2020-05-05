@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/my/my",
-    "pages/info/info"
+    "pages/info/info",
+    "pages/editor/editor",
+    "pages/newActivity/newActivity"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,20 +19,20 @@
       {
         "pagePath": "pages/index/index",
         "text": "动态",
-        "iconPath":"/resources/icons/ic_chat_bubble_outline_black_48dp.png",
-        "selectedIconPath":"/resources/icons/ic_chat_black_48dp.png"
+        "iconPath": "/resources/icons/ic_chat_bubble_outline_black_48dp.png",
+        "selectedIconPath": "/resources/icons/ic_chat_black_48dp.png"
       },
       {
         "pagePath": "pages/info/info",
         "text": "消息",
-        "iconPath":"/resources/icons/ic_notifications_none_black_48dp.png",
-        "selectedIconPath":"/resources/icons/ic_notifications_black_48dp.png"
+        "iconPath": "/resources/icons/ic_notifications_none_black_48dp.png",
+        "selectedIconPath": "/resources/icons/ic_notifications_black_48dp.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath":"/resources/icons/ic_person_outline_black_48dp.png",
-        "selectedIconPath":"/resources/icons/ic_person_black_48dp.png"
+        "iconPath": "/resources/icons/ic_person_outline_black_48dp.png",
+        "selectedIconPath": "/resources/icons/ic_person_black_48dp.png"
       }
     ]
   },

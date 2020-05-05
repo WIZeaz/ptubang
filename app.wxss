@@ -1,5 +1,7 @@
 /**app.wxss**/
+
 .container {
+  background-color: #eee;
 } 
 
 .block{
@@ -9,13 +11,4 @@
 .text-center{
   margin: 0 auto;
   text-align: center;
-}
-.shape-circle{
-  border-radius: 50%;
-  border: 2px solid #393D49;
-}
-
-.profile-photo{
-  height: 1rem;
-  width: 1rem;
 }

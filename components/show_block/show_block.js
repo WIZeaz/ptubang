@@ -1,5 +1,9 @@
 // components/show_block.js
 Component({
+  options: {
+    "addGlobalClass": true,
+    "styleIsolation": "apply-shared"
+  },
   /**
    * 组件的属性列表
    */
@@ -18,8 +22,5 @@ Component({
    */
   methods: {
 
-  },
-  options: {
-    addGlobalClass: true,
   }
 })

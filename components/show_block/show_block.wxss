@@ -5,6 +5,7 @@
   border: 1px solid #393D49;
   box-sizing: border-box;
 }
+
 .block-header{
   line-height: 1.5rem;
 }

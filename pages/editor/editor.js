@@ -1,11 +1,11 @@
-// pages/my/my.js
+// pages/editor/editor.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    selectedId:0
+
   },
 
   /**
