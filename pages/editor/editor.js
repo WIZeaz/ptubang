@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgUrl:"/resources/testImg/testImg.jpg",
+    toolId:0,
+    activitiId:0,
+    x:0,
+    y:0
   },
 
   /**
@@ -18,8 +22,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
+  onReady: function(){
   },
 
   /**
@@ -61,6 +64,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+
+  },
+  setToolId:function(e){
+    let id = e.currentTarget.dataset.id;
+    this.setData({toolId:parseInt(id)});
+  },
+  saveChange(){
 
   }
 })

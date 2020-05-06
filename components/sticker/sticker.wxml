@@ -1,0 +1,6 @@
+<!--components/sticker/sticker.wxml-->
+  <movable-area style="height:{{imgHeight}}; width:{{imgWidth}}; position:absolute; top:0px; left:0px; overflow:hidden">
+    <movable-view x="{{x}}" y="{{y}}" direction="all" out-of-bounds="true" scale="true">
+    <image src="{{stickerUrl}}"></image>
+    </movable-view>
+  </movable-area>

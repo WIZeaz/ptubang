@@ -1,2 +1,31 @@
-<!--pages/editor/editor.wxml-->
-<text>pages/editor/editor.wxml</text>
+<!--pages/editor/editor.wxml
+传入参数:
+imgUrl
+activityId
+-->
+<view class="background-base editor-box">
+  <image src="{{imgUrl}}" mode="widthFix"></image>
+  <sticker stickerUrl="/resources/icons/ic_chat_black_48dp.png" imgHeight="1000px" imgWidth="1000px"></sticker>
+</view>
+
+
+<view wx:if="{{toolId!=0}}" class="editor-tool">
+  <view wx:if="{{toolId==1}}"> 1/2/3 </view>
+
+  <view wx:elif="{{toolId==2}}"> 文字/贴纸 </view>
+  <view wx:else="{{toolId==3}}"> 饱和度/亮度/对比度 </view>
+
+  <view class="leftmost" bindtap="setToolId" data-id="0"> X </view>
+  <view class="rightmost" bindtap="saveChange"> V </view>
+</view>
+<view class="editor-toolbar row">
+  <view class="col">
+    <view class="col-4 text-center font-12" bindtap="setToolId" data-id="1"> 滤镜 </view>
+    <view class="col-4 text-center font-12" bindtap="setToolId" data-id="2"> 工具 </view>
+    <view class="col-4 text-center font-12" bindtap="setToolId" data-id="3"> 调整 </view>
+  </view>
+</view>
+<view class="editor-navbar">
+<view class="editor-button leftmost color-primary">取消</view>
+<view class="editor-button rightmost color-primary">完成</view>
+</view>

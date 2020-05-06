@@ -1,3 +1,4 @@
 {
-  "usingComponents": {}
+  "usingComponents": {"sticker":"/components/sticker/sticker"}
+  
 }
