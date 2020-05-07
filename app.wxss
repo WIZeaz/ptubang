@@ -2,7 +2,7 @@
 
 .container {
   background-color: #eee;
-} 
+}
 
 .block{
   display: block;
