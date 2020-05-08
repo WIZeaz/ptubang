@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "component":true,
+  "usingComponents": {"activity":"/pages/activity/activity"},
+  "tabBar": {
+    "list": [{
+      "pagePath": "activity"
+    }]
+}
 }

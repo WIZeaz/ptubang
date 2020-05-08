@@ -19,8 +19,17 @@ Page({
     "num_of_join_ac":2,
     "my_join_ac":"我参与的活动",
     "my_start_ac":"我发起的活动",
-
+    "num_of_join_people1":13,
+    "num_of_join_people2":24,
+    "num_of_join_people3":34,
+    "num_of_join_people4":9,
+    "tabBar": {
+      "list": [{
+        "pagePath": "activity",
+      }]
+    }
   },
+  
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -80,6 +89,9 @@ Page({
   },
   index2:function(){
     this.setData({ index:false})
+  },
+  gotoTalkpage:function()
+  {
+    wx.switchTab({ url: '/activity'})
   }
-
 })
