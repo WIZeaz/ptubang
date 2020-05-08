@@ -4,7 +4,7 @@ imgUrl
 activityId
 -->
 <view class="background-base editor-box">
-  <canvas canvas-id='mainCanvas' style='margin:0 auto;width:320px; height:320px; border:1px solid #ddd;'></canvas>
+  <canvas canvas-id='mainCanvas' style='margin:0 auto;width:{{imgWidth}}; height:{{imgHeight}}; border:1px solid #ddd;'></canvas>
   <!--<movable-area style="height:{{imgHeight}}px; width:{{imgWidth}}px; position:absolute; top:0px; left:0px; overflow:hidden">
     <movable-view x="{{x}}" y="{{y}}" direction="all" out-of-bounds="true" scale="true">
     <image src="{{stickerUrl}}"></image>
