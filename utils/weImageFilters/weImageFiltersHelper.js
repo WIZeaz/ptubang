@@ -24,7 +24,7 @@ Helper.prototype.saveImageData = function(cb) {
         width: z.canvasInfo.width,
         height: z.canvasInfo.height,
         success: res => {
-            console.log(res)
+            //console.log(res)
             let {
                 data
             } = res
@@ -43,12 +43,30 @@ Helper.prototype.initCanvas = function(tempFilePath, cb) {
     const ctx = wx.createCanvasContext(z.canvasInfo.canvasId)
     ctx.drawImage(tempFilePath, 0, 0, z.canvasInfo.width, z.canvasInfo.height)
     ctx.draw(false, () => {
-        console.log('draw done')
+        //console.log('draw done')
 
         z.saveImageData(cb)
     })
 }
 
+Helper.prototype.drawText=function(text,fontsize,x,y,cb){
+    const ctx = wx.createCanvasContext(this.canvasInfo.canvasId);
+    ctx.setFontSize(fontsize);
+    ctx.fillText(text,x,y+fontsize);
+    ctx.draw(true, () => {
+        this.saveImageData(cb);
+    })
+}
+
+Helper.prototype.drawImage=function(url,dx,dy,cb){
+    const z = this
+    const ctx = wx.createCanvasContext(this.canvasInfo.canvasId);
+    console.log(dx,dy);
+    ctx.drawImage(url,dx,dy);
+    ctx.draw(true,()=>{
+        z.saveImageData(cb);
+    });
+}
 // 更新canvas信息
 Helper.prototype.updateCanvasInfo = function (options) {
     if (options.canvasId) {

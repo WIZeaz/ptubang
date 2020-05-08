@@ -2,6 +2,9 @@
 page{
   box-sizing: border-box;
 }
+image{
+  width: 200px;
+}
 .background{
   display: flex;
   background-color: #111;
@@ -25,15 +28,19 @@ page{
   position: fixed;
   bottom: 0px;
   height: 2rem;
+  line-height: 2rem;
+  vertical-align: 0px;
+  box-sizing: border-box;
 }
 .editor-button{
-  line-height: 2rem;
-  padding: 0 1rem 0.5rem 1rem;
+  display: block;
+  margin: 0 1rem 1rem 1rem;
 }
 .editor-toolbar{
   position: fixed;
-  height: 1rem;
-  bottom: 2.5rem;
+  height: 2rem;
+  line-height: 2rem;
+  bottom: 3rem;
   box-shadow: #E4E7ED 1px solid;
 }
 

@@ -1,5 +1,7 @@
 /**app.wxss**/
-
+page{
+  font-size: 32rpx;
+}
 .container {
   background-color: #eee;
 }
@@ -106,19 +108,21 @@
 .x-center {
   text-align: center;
 }
-
-.font-6{
-  font-size: 6px;
+.font-tiny{
+  font-size: 16rpx;
 }
-
-.font-12{
-  font-size: 12px;
+.font-small{
+  font-size: 24rpx;
 }
-
-.font-18{
-  font-size: 18px;
+.font-normal{
+  font-size: 32rpx;
 }
-
+.font-big{
+  font-size: 40rpx;
+}
+.font-giant{
+  font-size: 48rpx;
+}
 .background-base{
     background-color: #DCDFE6;
 }

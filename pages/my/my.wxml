@@ -1,6 +1,24 @@
 <!--pages/my/my.wxml-->
 <view class="container">
-<view class="userInfo">
+<view class="userInfo row">
+<view class="col">
+  <view class="col-4">
+    <image class="shape-circle" style="height:3rem; width:3rem; align:center; margin: 0 auto;" src="/resources/icons/ic_chat_bubble_outline_black_48dp.png">
+    </image>
+  </view>
+  <view class="col-8">
+    <view> wizeaz </view>
+    <view class="row">
+      <view class="col">
+        <view class="col-4 x-center"> 1 </view>
+        <view class="col-4 x-center"> 2 </view>
+        <view class="col-4 x-center"> 3 </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>
 userInfo
 </view>
 <view class="my-nav">

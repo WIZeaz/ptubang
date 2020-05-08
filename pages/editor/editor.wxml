@@ -3,36 +3,55 @@
 imgUrl
 activityId
 -->
+
 <view class="background-base editor-box">
-  <canvas canvas-id='mainCanvas' style='margin:0 auto;width:{{imgWidth}}; height:{{imgHeight}}; border:1px solid #ddd;'></canvas>
-  <!--<movable-area style="height:{{imgHeight}}px; width:{{imgWidth}}px; position:absolute; top:0px; left:0px; overflow:hidden">
-    <movable-view x="{{x}}" y="{{y}}" direction="all" out-of-bounds="true" scale="true">
-    <image src="{{stickerUrl}}"></image>
+  <movable-area style="height:{{imgHeight}}px; width:{{imgWidth}}px; position:fixed; top:0px; left:0px;   box-sizing:border-box; z-index:999;">
+    <movable-view direction="all" id="sticker" style="z-index:999;"wx:if="{{toolSettingId==0}}">
+      <view style="font-size:{{fontsize}}px; height:{{fontsize}}px; width:1000px; z-index:999;"> {{text}} </view>
     </movable-view>
-  </movable-area>-->
+    <movable-view direction="all" out-of-bounds="true" style=" z-index:999;" damping="1" id="sticker" wx:if="{{toolSettingId==1}}" scale="true" style="width:{{stickerWidth}}px; height:{{stickerHeight}}px; z-index:999;">
+      <image src="{{stickerUrl}}" style="width:{{stickerWidth}}px; height:{{stickerHeight}}px; z-index=999;"></image>
+    </movable-view>
+  </movable-area>
+  <image wx:if="{{toolId==2}}" src="{{tempImageUrl}}" style="margin:0 auto; width:{{imgWidth}}px; height:{{imgHeight}}px;"> </image>
+  <canvas canvas-id='mainCanvas' style='margin:0 auto; width:{{imgWidth}}px; height:{{imgHeight}}px; {{toolId==2?"display:none;":""}}'></canvas>
+  
 </view>
 
 
 <view wx:if="{{toolId!=0}}" class="editor-tool">
   <view wx:if="{{toolId==1}}"> 
     <scroll-view scroll-x="true" style="width: 100%">
-    <view class="flex">
-      <view wx:for="{{filterList}}" wx:key="index" class="array-item" bindtap="filterImage" data-index="{{index}}">
-        {{item}}
+      <view class="flex">
+        <view wx:for="{{filterList}}" wx:key="index" class="array-item" bindtap="filterImage" data-index="{{index}}">
+          {{item}}
+        </view>
       </view>
-    </view>
-
     </scroll-view>
   </view>
-  <view wx:elif="{{toolId==2}}"> 文字/贴纸 </view>
+
+  <view wx:elif="{{toolId==2}}">
+    <scroll-view scroll-x="true" style="width: 100%">
+      <view class="flex">
+        <view wx:for="{{toolList}}" wx:key="index" class="array-item" bindtap="useTool" data-index="{{index}}">
+          {{item}}
+        </view>
+      </view>
+    </scroll-view>
+
+    <view wx:if="{{toolSettingId==0}}">
+      <input model:value="{{text}}" placeholder="在这里输入文字"/>
+    </view>
+  </view>
+
   <view wx:else="{{toolId==3}}"> 饱和度/亮度/对比度 </view>
 
 
   <view class="editor-navbar row">
   <view class="col">
-    <image src="/resources/icons/ic_close_black_48dp.png"  bindtap="cancel" data-id="0" style="height:1.5rem; width:1.5rem;" class="button col-1"> </image>
+    <image src="/resources/icons/ic_close_black_48dp.png"   bindtap="cancel" data-id="{{toolId}}" style="height:48rpx; width:48rpx;" class="editor-button col-1"> </image>
     <view class="col-10"></view>
-    <image src="/resources/icons/ic_check_black_48dp.png" bindtap="confirm" style="height:1.5rem; width:1.5rem;" class="button col-1"> </image>
+    <image src="/resources/icons/ic_check_black_48dp.png"  bindtap="confirm" data-id="{{toolId}}" style="height:48rpx; width:48rpx;" class="editor-button col-1"> </image>
 
   </view>
 
@@ -41,12 +60,12 @@ activityId
 </view>
 <view class="editor-toolbar row">
   <view class="col">
-    <view class="col-4 text-center font-12" bindtap="setToolId" data-id="1"> 滤镜 </view>
-    <view class="col-4 text-center font-12" bindtap="setToolId" data-id="2"> 工具 </view>
-    <view class="col-4 text-center font-12" bindtap="setToolId" data-id="3"> 调整 </view>
+    <view class="col-4 text-center font-small" bindtap="setToolId" data-id="1"> 滤镜 </view>
+    <view class="col-4 text-center font-small" bindtap="setToolId" data-id="2"> 工具 </view>
+    <view class="col-4 text-center font-small" bindtap="setToolId" data-id="3"> 调整 </view>
   </view>
 </view>
 <view class="editor-navbar">
-  <view class="editor-button leftmost color-primary">取消</view>
-  <view class="editor-button rightmost color-primary">完成</view>
+  <view class="editor-button leftmost color-primary font-normal">取消</view>
+  <view class="editor-button rightmost color-primary font-normal">完成</view>
 </view>

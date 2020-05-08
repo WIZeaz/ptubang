@@ -1,15 +1,11 @@
 // pages/editor/editor.js
-
 const ImageFilters = require('../../utils/weImageFilters/weImageFilters.js');
 const Helper = require('../../utils/weImageFilters/weImageFiltersHelper.js');
 
-let helper = new Helper({
-  canvasId: 'mainCanvas',
-  width: 320,
-  height: 320
-})
+let helper;
 let imageData;
 let tempImageData;
+let systemInfo;
 const filters = {
   original: function (data) {
       return data
@@ -167,29 +163,38 @@ const filters = {
       return ImageFilters.Twril(data, 0.5, 0.5, 120, 90, 0, true)
   },
 }
-const array=Object.keys(filters);
+const filterKeys=Object.keys(filters);
+const toolList=["文字","贴纸"];
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrl:"/resources/testImg/human.jpg",
-    stickerUrl:"/resources/editor/tools/favicon.ico",
-    imgHeight:1000,
-    imgWidth:1000,
+    imgUrl:"/resources/testImg/testImg.jpg",
+    stickerUrl:"/resources/icons/ic_chat_black_48dp.png",
+    stickerWidth:100,
+    stickerHeight:100,
+    imgHeight:320,
+    imgWidth:320,
     toolId:0,
     activitiId:0,
     x:0,
     y:0,
-    filterList:array
+    filterList:filterKeys,
+    toolList:toolList,
+    toolSettingId:-1,
+    text:"测试文本",
+    fontsize:20,
+    tempImageUrl:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    systemInfo=wx.getSystemInfoSync();
   },
 
   /**
@@ -204,17 +209,35 @@ Page({
    */
   onShow: function () {
     console.log(this.data.imgUrl);
+
     wx.showLoading({
       title: '正在加载图片……',
       mask:true
     })
-    helper.initCanvas(this.data.imgUrl,()=>{
-      imageData=helper.createImageData();
-      wx.hideLoading({
-        complete: (res) => {},
-      })
-    }
-    );
+    const that=this;
+    wx.getImageInfo({
+      src: this.data.imgUrl,
+      success: function(res){
+        let scale=systemInfo.screenWidth/res.width;
+        console.log(res.height*scale);
+        console.log(res.width*scale);
+        that.setData({imgHeight:res.height*scale,imgWidth:res.width*scale});
+        helper = new Helper({
+          canvasId: 'mainCanvas',
+          width: res.width*scale,
+          height: res.height*scale
+        });
+        helper.initCanvas(that.data.imgUrl,()=>{
+          imageData=helper.createImageData();
+          wx.hideLoading({
+            complete: (res) => {},
+          })
+        });
+      }
+    })
+    
+
+
   },
 
   /**
@@ -252,7 +275,13 @@ Page({
 
   },
   setToolId:function(e){
+    console.log('setToolId');
     let id = e.currentTarget.dataset.id;
+    helper.putImageData(imageData,()=>{        
+      helper.getImageTempFilePath((res)=>{
+        this.setData({tempImageUrl:res});
+      });
+    });
     this.setData({toolId:parseInt(id)});
   },
   saveChange(){
@@ -260,22 +289,80 @@ Page({
   },
   filterImage:function(e){
     let index=e.currentTarget.dataset.index;
-    tempImageData=filters[array[index]](imageData);
+    tempImageData=filters[filterKeys[index]](imageData);
     wx.showLoading({
       title: '正在处理',
       mask:true
     })
     helper.putImageData(tempImageData, () => {
-      wx.hideLoading()
-  })
+      console.log(tempImageData);
+      wx.hideLoading();
+    });
   },
   cancel:function(e){
-    helper.putImageData(imageData);
+    console.log('cancel');
+    let id=e.currentTarget.dataset.id;
+    tempImageData=imageData;
     this.setData({toolId:0});
+    this.setData({toolSettingId:-1});
+    helper.putImageData(imageData);
   },
   confirm:function(e){
-    imageData=tempImageData;
-    helper.putImageData(imageData);
+    console.log('confirm');
+    let id=e.currentTarget.dataset.id;
+    if (id==1){
+      imageData=tempImageData;
+      helper.putImageData(imageData);
+    } else if (id==2){
+      const that=this;
+      let toolSettingId=this.data.toolSettingId;
+      if (toolSettingId==-1){
+        this.setData({toolId:0});
+        this.setData({toolSettingId:-1});
+        return;
+      }
+      let stickerUrl=this.data.stickerUrl;
+      let text=this.data.text;
+      let fontsize=this.data.fontsize;
+      wx.createSelectorQuery().select('#sticker').fields({size: true,rect:true},
+        (res)=>{
+          let left=res.left;
+          let top=res.top;
+          console.log(toolSettingId);
+          helper.putImageData(imageData,()=>{
+            if (toolSettingId==0){
+              helper.drawText(text,fontsize,left,top,()=>{
+                imageData=helper.createImageData();
+              });
+            } else {
+              //console.log("im here");
+              helper.drawImage(stickerUrl,left,top,()=>{
+                imageData=helper.createImageData();
+              });
+            }
+          });
+        }).exec();
+
+    }
     this.setData({toolId:0});
+    this.setData({toolSettingId:-1});
+  },
+  useTool:function(e){
+    let id=e.currentTarget.dataset.index;
+    this.setData({toolSettingId:id});
+    if (id==0){
+      //console.log("text");
+      console.log(this.data.text);
+      
+    } else {
+      const that=this;
+      wx.getImageInfo({
+        src: this.data.stickerUrl,
+        success: function(res){
+          console.log(res);
+          that.setData({stickerHeight:res.height,stickerWidth:res.width});
+        }
+      })
+    }
   }
 })
