@@ -6,8 +6,8 @@ import { Config } from 'config.js';
 
 class Token {
     constructor() {
-        this.verifyUrl = Config.restUrl + 'token/verify';
-        this.tokenUrl = Config.restUrl + 'token/user';
+        this.verifyUrl = Config.restUrl + 'user/verify';
+        this.tokenUrl = Config.restUrl + 'user/login';
     }
 
     verify() {
@@ -26,34 +26,43 @@ class Token {
             url: that.verifyUrl,
             method: 'POST',
             data: {
-                token: token
+                'token': token
             },
             success: function (res) {
                 var valid = res.data.isValid;
                 if(!valid){
                     that.getTokenFromServer();
                 }
-            }
+            },
         })
     }
 
     getTokenFromServer(callBack) {
         var that  = this;
-        wx.login({
-            success: function (res) {
-                wx.request({
-                    url: that.tokenUrl,
-                    method:'POST',
-                    data:{
-                        code:res.code
-                    },
-                    success:function(res){
-                        wx.setStorageSync('token', res.data.token);
-                        callBack&&callBack(res.data.token);
+        wx.getUserInfo({success:(res)=>{
+            let avatarUrl=res.avatarUrl;
+            let nickName=res.nickName;
+            wx.login({
+                success: function (res) {
+                    wx.request({
+                        url: that.tokenUrl,
+                        method:'POST',
+                        data:{
+                            code:res.code,
+                            avatarUrl:avatarUrl,
+                            nickName:nickName
+                        },
+                        success:function(res){
+                            console.log(res);
+                            wx.setStorageSync('token', res.data.token);
+                            wx.setStorageSync('user', res.data.entity);
+                            callBack&&callBack(res.data.token);
+                        }
+                    })
                     }
-                })
+                });
             }
-        })
+        });
     }
 }
 

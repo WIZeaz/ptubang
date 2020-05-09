@@ -5,6 +5,6 @@ class Config{
     }
 }
 
-Config.restUrl = 'http://wizeaz.top/';
+Config.restUrl = 'http://39.108.118.224:8089/';
 
 export {Config};

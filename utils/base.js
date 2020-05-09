@@ -3,7 +3,6 @@
  */
 import { Token } from 'token.js';
 import { Config } from 'config.js';
-
 class Base {
     constructor() {
         "use strict";
@@ -28,7 +27,7 @@ class Base {
             method:params.type,
             header: {
                 'content-type': 'application/json',
-                'token': wx.getStorageSync('token')
+                'Authorization': wx.getStorageSync('token')
             },
             success: function (res) {
 
