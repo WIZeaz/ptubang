@@ -1,1 +1,29 @@
-/* pages/my/my.wxss */
+
+.img{
+  margin:15px;
+  width: 5.5rem;
+  height:5.5rem;
+  border-radius:50%;
+  overflow:hidden;
+  display:flex;
+}
+.button {
+  border: none;
+  color: #000000;
+  padding-top: 16px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18.5px;
+  cursor: pointer;
+}
+.big{
+  line-height:50px
+}
+.margin{
+   margin:10px;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+  }

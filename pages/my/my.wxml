@@ -1,33 +1,54 @@
 <!--pages/my/my.wxml-->
+
 <view class="container">
-<view class="userInfo row">
-<view class="col">
-  <view class="col-4">
-    <image class="shape-circle" style="height:3rem; width:3rem; align:center; margin: 0 auto;" src="/resources/icons/ic_chat_bubble_outline_black_48dp.png">
-    </image>
-  </view>
-  <view class="col-8">
-    <view> wizeaz </view>
-    <view class="row">
-      <view class="col">
-        <view class="col-4 x-center"> 1 </view>
-        <view class="col-4 x-center"> 2 </view>
-        <view class="col-4 x-center"> 3 </view>
-      </view>
+  <view class="col" >
+    <view class="col-4" >
+     <open-data type="userAvatarUrl" class="img"></open-data>
+    </view>
+    <view class="col-8">
+     <view class="big"><open-data type="userNickName" lang="zh_CN" class="font-18 x-center"></open-data></view>
+     <view class="col">
+      <view class="col-4 x-center" style="font-size:15px">{{num_of_start_ac}}</view>
+      <view class="col-4 x-center" style="font-size:15px">{{num_of_join_ac}}</view>
+      <view class="col-4 x-center" style="font-size:15px">{{like}}</view>
+     </view>
+     <view class="col">
+      <view class="col-4 font-12 x-center">发起活动</view>
+      <view class="col-4 font-12 x-center">参与活动</view>
+      <view class="col-4 font-12 x-center">获得点赞</view>
+     </view>
     </view>
   </view>
-
-
-</view>
-userInfo
-</view>
-<view class="my-nav">
-nav
-</view>
-<view wx:if="{{selectedId==0}}">
-select 0
-</view>
-<view wx:else="{{selectedId==0}}">
-select 1
-</view>
+  <view wx:if="{{index==true}}">
+   <view class="col big">
+    <view class="col-6 x-center button color-primary" bindtap="index1">{{my_join_ac}}</view>
+    <view class="col-6 x-center button" bindtap="index2">{{my_start_ac}}</view>
+   </view>
+   <view class="col">
+    <view class="col-6 x-center button margin" bindtap="gotoTalkpage"><image class="img" src="{{imgUrl1}}"> </image></view>
+    <view class="col-6 x-center button margin" bindtap="gotoTalkpage"><image class="img" src="{{imgUrl1}}"> </image></view>
+   </view>
+   <view class="col">
+    <view class="col-3 x-left margin">img{{num_of_join_people1}}</view>
+    <view class="col-3 x-right margin">3天前</view>
+    <view class="col-3 x-left margin">img{{num_of_join_people2}}</view>
+    <view class="col-3 x-right margin">12天前</view>
+   </view>
+  </view>
+  <view wx:if="{{index==false}}">
+    <view class="col big">
+    <view class="col-6 x-center button" bindtap="index1">{{my_join_ac}}</view>
+    <view class="col-6 x-center button color-primary" bindtap="index2">{{my_start_ac}}</view>
+    </view>
+    <view class="col">
+    <view class="col-6 x-center button margin"><image class="img" src="{{imgUrl2}}"> </image></view>
+    <view class="col-6 x-center button margin"><image class="img" src="{{imgUrl2}}"> </image></view>
+   </view>
+    <view class="col">
+    <view class="col-3 x-left margin">img{{num_of_join_people3}}</view>
+    <view class="col-3 x-right margin">23天前</view>
+    <view class="col-3 x-left margin">img{{num_of_join_people4}}</view>
+    <view class="col-3 x-right margin">1天前</view>
+   </view>    
+  </view>
 </view>
