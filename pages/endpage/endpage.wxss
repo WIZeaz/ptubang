@@ -1,2 +1,5 @@
 /* page/endpage/endpage.wxss */
 @import "../../weui.wxss";
+.but{
+  margin-bottom: 20rpx;
+}

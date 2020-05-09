@@ -73,3 +73,6 @@ button{
 .mini-btn{
   margin-right: 10rpx;
 }
+.but{
+  margin-bottom: 20rpx;
+}

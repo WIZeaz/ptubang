@@ -11,12 +11,12 @@
   <view class="item"></view>
   <view class="item">
   <navigator url="/pages/endpage/endpage" > 
-  <a href="javascript:;" class="weui-btn weui-btn_primary">分享给好友</a>
+  <a href="javascript:;" class="weui-btn weui-btn_primary but">分享给好友</a>
   </navigator>
   </view>
   <view class="item">
    <navigator url="/pages/endpage/endpage" > 
-  <a href="javascript:;" class="weui-btn weui-btn_primary">分享到朋友圈</a>
+  <a href="javascript:;" class="weui-btn weui-btn_primary but">分享到朋友圈</a>
   </navigator>
   </view>
 
