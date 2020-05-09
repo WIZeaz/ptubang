@@ -2,7 +2,7 @@
 <tab-control bind:tab-control-cilck="bind_tab_control" button_names="{{['原图','排行榜','全部作品','我的作品']}}"/>
  <view wx:if="{{currentIndex==0}}">
   <image class="img" src="{{img_url}}" mode="widthFix"></image>
-  <view bindtap="navigateTo" class="naviga" data-url="/pages/editor/editor">开始创作</view>
+  <view bindtap="navigateTo" class="naviga" data-url="/pages/editor/editor?imgUrl=/resources/image/my/bpic1.jpg">开始创作</view>
 </view>
 <view wx:if="{{currentIndex==1}}">
 <rank-list ranklist="{{ranklist}}"/>

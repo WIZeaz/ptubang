@@ -196,9 +196,9 @@ Page({
   onLoad: function (options) {
     systemInfo=wx.getSystemInfoSync();
     console.log(options)
-    // this.setData({
-    //   imgUrl:options.img_url
-    // })
+    this.setData({
+       imgUrl:options.imgUrl
+    });
   },
 
   /**
@@ -223,13 +223,15 @@ Page({
       src: this.data.imgUrl,
       success: function(res){
         let scale=systemInfo.screenWidth/res.width;
-        console.log(res.height*scale);
-        console.log(res.width*scale);
-        that.setData({imgHeight:res.height*scale,imgWidth:res.width*scale});
+        let dHeight=Math.trunc(res.height*scale);
+        let dWidth=Math.trunc(res.width*scale);
+        console.log(dHeight);
+        console.log(dWidth);
+        that.setData({imgHeight:dHeight,imgWidth:dWidth});
         helper = new Helper({
           canvasId: 'mainCanvas',
-          width: res.width*scale,
-          height: res.height*scale
+          width: dWidth,
+          height: dHeight
         });
         helper.initCanvas(that.data.imgUrl,()=>{
           imageData=helper.createImageData();
