@@ -1,7 +1,7 @@
 <!--index.wxml-->
-
-<view class="container">
-<showBlock blockInfo="{{test}}">
+<button open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="onGotUserInfo" bindtap="getInfo" wx:if="{{login==0}}">请求授权</button>
+<view class="container" >
+<showBlock blockInfo="{{test}}" my_name="{{userInfo.nickName}}">
 </showBlock>
 
 

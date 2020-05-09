@@ -7,31 +7,33 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
+    login:0,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     test:[{
+
       "user":{
-        "name":"zyh",
-        "profilePhotoUrl":"/resources/icons/ic_chat_black_48dp.png"
+        "name":"WIZeaz",
+        "profilePhotoUrl":"/resources/test_img/zyh.jpg"
       },
       "imgUrl":"/resources/image/my/bpic1.jpg",
-      "like":12,
+      "like":81,
       "liked":0,
-      "comments_num":12,
+      "comments_num":2,
       "comments":[
-        {"userName":"wizeaz", "content":"123"},{"userName":"wizeaz1", "content":"123"}
+        {"userName":"WIZeaz", "content":"P图技术不是很好，希望大家喜欢"},{"userName":"不务正业的程序猿", "content":"这个是啥动漫来着"}
       ]
     },
     {
       "user":{
-        "name":"wwwww",
-        "profilePhotoUrl":"/resources/icons/ic_chat_black_48dp.png"
+        "name":"BOGE",
+        "profilePhotoUrl":"/resources/test_img/cb.jpg"
       },
       "imgUrl":"/resources/image/my/bpic2.jpg",
-      "like":122,
+      "like":52,
       "liked":1,
       "comments_num":12,
       "comments":[
-        {"userName":"wizeaz", "content":"234"}
+        {"userName":"yeyan777", "content":"这个P的还能看，你赞有了"}
       ]
     }
     ]
@@ -43,6 +45,7 @@ Page({
     })
   },
   onLoad: function () {
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -56,6 +59,7 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
+        console.log(res.userInfo)
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
@@ -77,5 +81,17 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+ getInfo(){
+   wx.getUserInfo({
+     success: (res) => {  
+      console.log(res) 
+      this.setData({
+      login:1,
+      userInfo: res.userInfo
+    })},
+   })
+
+ }
 })
+

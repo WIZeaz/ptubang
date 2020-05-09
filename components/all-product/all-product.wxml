@@ -16,8 +16,14 @@
         <text>{{item.like}}</text>
         <image class="img" bindtap="comment" data-index="{{index}}" src="/resources/image/my/comment.png" mode="widthFix"></image>
         
-        <view></view>     
-        <image class="img" src="/resources/image/my/transpond.png" mode="widthFix" bindtap="share"> </image> 
+        <view></view>      
+        
+        
+        <label for="btnId" >
+          <button open-type="share" id="btnId" style="display:hidden" bindtap='clickToShare'></button>
+          <image class="img" src="/resources/image/my/transpond.png" mode="widthFix" bindtap="share"> </image> 
+
+        </label>
         
 
       </view>  

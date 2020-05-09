@@ -13,10 +13,10 @@ Page({
     }
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  backtoindex: function() {
+   wx.reLaunch({
+     url: '/pages/index/index',//防止套娃
+   })
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

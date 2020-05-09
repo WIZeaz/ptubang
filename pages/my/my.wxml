@@ -25,13 +25,14 @@
     <view class="col-6 x-center button" bindtap="index2">{{my_start_ac}}</view>
    </view>
    <view class="col">
-    <view class="col-6 x-center button margin" bindtap="gotoTalkpage"><image class="img" src="{{imgUrl1}}"> </image></view>
-    <view class="col-6 x-center button margin" bindtap="gotoTalkpage"><image class="img" src="{{imgUrl1}}"> </image></view>
+   <view></view>
+    <view class="col-6 x-center button margin" bindtap="gotoTalkpage1"><image class="img" src="{{imgUrl1}}"> </image></view>
+    <view class="col-6 x-center button margin" bindtap="gotoTalkpage2"><image class="img" src="{{imgUrl2}}"> </image></view>
    </view>
    <view class="col">
-    <view class="col-3 x-left margin">img{{num_of_join_people1}}</view>
+    <view class="col-3 x-left margin">天行九歌</view>
     <view class="col-3 x-right margin">3天前</view>
-    <view class="col-3 x-left margin">img{{num_of_join_people2}}</view>
+    <view class="col-3 x-left margin">壁纸</view>
     <view class="col-3 x-right margin">12天前</view>
    </view>
   </view>
@@ -41,13 +42,13 @@
     <view class="col-6 x-center button color-primary" bindtap="index2">{{my_start_ac}}</view>
     </view>
     <view class="col">
-    <view class="col-6 x-center button margin"><image class="img" src="{{imgUrl2}}"> </image></view>
+    <view class="col-6 x-center button margin"><image class="img" src="{{imgUrl1}}"> </image></view>
     <view class="col-6 x-center button margin"><image class="img" src="{{imgUrl2}}"> </image></view>
    </view>
     <view class="col">
-    <view class="col-3 x-left margin">img{{num_of_join_people3}}</view>
+    <view class="col-3 x-left margin">每日一刷</view>
     <view class="col-3 x-right margin">23天前</view>
-    <view class="col-3 x-left margin">img{{num_of_join_people4}}</view>
+    <view class="col-3 x-left margin">唯美剧照</view>
     <view class="col-3 x-right margin">1天前</view>
    </view>    
   </view>

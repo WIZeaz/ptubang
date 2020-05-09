@@ -1,8 +1,9 @@
 {
-  "pages": ["pages/endpage/endpage",
-    "pages/share_link/share_link",
-    
+  "pages": [  
     "pages/index/index",
+    "pages/share_link/share_link",
+    "pages/endpage/endpage",
+  
     "pages/invite/invite",
     
     

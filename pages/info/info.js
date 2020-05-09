@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    message:[{type:0,name:"周杰伦",title:"goodjob",src:"/resources/image/my/pic1.jpg"},{type:1,name:"张杰伦",title:"GodV",content:"不错",src:"/resources/image/my/pic1.jpg"},{type:2,title:"superme",rank:1,src:"/resources/image/my/pic1.jpg"}]//定义接口，type是类型，名字是对象
+    message:[{type:0,name:"BOGE",title:"",src:"/resources/test_img/cb.jpg"},{type:1,name:"WIZeaz",title:"GodV",content:"不错",src:"/resources/test_img/zyh.jpg"},{type:2,title:"老艺术家了",rank:1,src:"/resources/image/my/pic1.jpg"}]//定义接口，type是类型，名字是对象
 
   },
 
