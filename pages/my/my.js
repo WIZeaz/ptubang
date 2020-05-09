@@ -92,6 +92,8 @@ Page({
   },
   gotoTalkpage:function()
   {
-    wx.switchTab({ url: '/activity'})
+    wx.navigateTo({
+      url: '/pages/activity/activity',
+    })
   }
 })
