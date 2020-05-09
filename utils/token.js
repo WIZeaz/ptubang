@@ -40,8 +40,8 @@ class Token {
     getTokenFromServer(callBack) {
         var that  = this;
         wx.getUserInfo({success:(res)=>{
-            let avatarUrl=res.avatarUrl;
-            let nickName=res.nickName;
+            let userInfo=res.userInfo;
+            console.log(userInfo);
             wx.login({
                 success: function (res) {
                     wx.request({
@@ -49,8 +49,7 @@ class Token {
                         method:'POST',
                         data:{
                             code:res.code,
-                            avatarUrl:avatarUrl,
-                            nickName:nickName
+                            userInfo:userInfo
                         },
                         success:function(res){
                             console.log(res);
