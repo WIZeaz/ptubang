@@ -1,8 +1,8 @@
 /* pages/info/info.wxss */
 /* pages/message/message.wxss */
 .outer-container{
-  display: grid;
-  grid-template-columns: 1fr;
+  max-width: 700rpx;
+  margin: 0 auto;
 }
 .inner-container{
   display: grid;

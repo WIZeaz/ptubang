@@ -2,7 +2,7 @@
 <view class="outer-container">
 <block wx:for="{{message}}" wx:key="index">
   <view class="inner-container">
-    <image class="message_img"src="{{item.src}}" mode="widthFix"></image>
+    <image class="message_img" src="{{item.src}}" mode="widthFix"></image>
     <view class="describtion" wx:if="{{item.type==0}}">
       <text class="name">{{item.name}}</text> 
       <text>赞了你的作品</text> 

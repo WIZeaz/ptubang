@@ -1,40 +1,35 @@
-
 <block wx:for="{{blockInfo}}" wx:key="index">
   <view class="outer-box">
-    <image class="img" src="{{item.user.profilePhotoUrl}}" mode="widthFix"></image>
-    <view>
-      <view class="container1">
+
+      <view class="title-bar container">
         <!-- <image class="img" src="{{item.user.profilePhotoUrl}}" mode="widthFix"></image> -->
-        <view class="word">{{item.user.name}} 帮你P了图</view>
+        <image class="avatar" src="{{item.user.profilePhotoUrl}}" mode="widthFix"></image>
+        <view class="text-title color-primary"> {{item.user.name}}帮你P了图 </view>
       </view>
+
+
       <image class="img" src="{{item.imgUrl}}" mode="widthFix"></image>
-      <view class="container2">
-        
-        <image class="img" wx:if="{{item.liked==0}}" bindtap="handle_like_tap" data-index="{{index}}" src="/resources/image/my/like.png" mode="widthFix"></image>
-        <image class="img" wx:if="{{item.liked==1}}" bindtap="handle_like_tap" data-index="{{index}}" src="/resources/image/my/like_active.png" mode="widthFix"></image>
-        
-        <text>{{item.like}}</text>
-     
-          <image class="img" bindtap="comment" data-index="{{index}}" src="/resources/image/my/comment.png" mode="widthFix"></image>
-        
-        <view></view>     
-        <label for="btnId" >
-          <button open-type="share" id="btnId" style="display:hidden" bindtap='clickToShare'></button>
-          <image class="img" src="/resources/image/my/transpond.png" mode="widthFix" bindtap="share"> </image> 
-        </label>
 
-      </view>  
+      <view class="container">
+        <view class="social-bar">
+          <image class="social-button" wx:if="{{item.liked==0}}" bindtap="handle_like_tap" data-index="{{index}}" src="/resources/image/my/like.png" mode="widthFix"></image>
+          <image class="social-button" wx:if="{{item.liked==1}}" bindtap="handle_like_tap" data-index="{{index}}" src="/resources/image/my/like_active.png" mode="widthFix"></image>
+          
+          <view class="text-like">{{item.like}}</view>
 
-      <block wx:for="{{item.comments}}" wx:for-index="comment_index" wx:for-item="comment_item" wx:key="comment_index">
-        <view><text class="name">{{comment_item.userName}}</text><text class="comment">: {{comment_item.content}}</text>
+          <image class="social-button" bindtap="comment" data-index="{{index}}" src="/resources/icons/icons8-chat-bubble-48.png" mode="widthFix"></image>
+            <!--<button open-type="share" id="btnId" style="display:hidden" bindtap='clickToShare'></button>-->
+          <image class="social-button right" src="/resources/icons/icons8-share-3-48.png" mode="widthFix" bindtap='clickToShare'> </image> 
         </view>
-      </block>
-      <view class="air-gap"></view>
+
+      <view wx:for="{{item.comments}}" wx:for-index="comment_index" wx:for-item="comment_item" wx:key="comment_index">
+        <text class="name">{{comment_item.userName}}</text><text class="comment">: {{comment_item.content}}</text>
+      </view>
     </view>
   </view>
 </block>
 <!-- input键盘框是单独出现的，不用包含在这些乱七八糟的循环里 -->
 <input_box bind:inputMsg="bind_send_msg" need_input="{{input}}"/>
 <!-- <half-screen-dialog dialog="{{need_half_screen}}"/>-->
-<image class="add" src="/resources/icons/add.png" mode="widthFix" bindtap="handle_add_tap"></image> 
+<image class="add" src="/resources/icons/ic_add_circle_outline_black_48dp.png" mode="widthFix" bindtap="handle_add_tap"></image> 
 

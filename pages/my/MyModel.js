@@ -1,7 +1,7 @@
 import { Base } from "../../utils/base";
 import { UserHelper } from "../../utils/UserHelper";
 
-class ActivityModel extends Base{
+class MyModel extends Base{
   constructor(){
     super();
     this.userHelper=new UserHelper();

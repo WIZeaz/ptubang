@@ -3,9 +3,13 @@ page{
   font-size: 32rpx;
 }
 .container {
-  background-color: #eee;
+  background-color: #FFFFFF;
 }
-
+.outer-box{
+  border-bottom: 1rpx #E4E7ED solid;
+  box-sizing: border-box;
+  padding-bottom: 30rpx;
+}
 .block{
   display: block;
 }

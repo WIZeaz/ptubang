@@ -4,5 +4,8 @@
     "half-screen-dialog":"/components/half-screen-dialog/half-screen-dialog",
     "tab-control":"/components/tab-control/tab-control",
     "input_box":"/components/input_box/input_box"
+  },
+  "options":{
+    "addGlobalClass": true
   }
 }

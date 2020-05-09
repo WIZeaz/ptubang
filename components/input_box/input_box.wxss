@@ -8,7 +8,7 @@
   background-color: #FFF8DC;
   align-items: center;
   box-sizing: border-box;
-
+  z-index: 999;
 }
 
 /* 输入框外样式 */
