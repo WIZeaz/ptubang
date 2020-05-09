@@ -5,7 +5,8 @@
     "pages/my/my",
     "pages/info/info",
     "pages/editor/editor",
-    "pages/newActivity/newActivity"
+    "pages/newActivity/newActivity",
+    "pages/activity/activity"
   ],
   "window": {
     "backgroundTextStyle": "light",
