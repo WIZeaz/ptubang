@@ -44,3 +44,13 @@ width: 50%;
   margin-bottom: 20rpx;
   border-top: 1px solid #DCDFE6;
 }
+.naviga{
+  margin-top: 20rpx;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  border:1px solid black;
+  background-color: chartreuse;
+}

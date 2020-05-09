@@ -14,11 +14,14 @@
         <image class="img" wx:if="{{item.liked==1}}" bindtap="handle_like_tap" data-index="{{index}}" src="/resources/image/my/like_active.png" mode="widthFix"></image>
         
         <text>{{item.like}}</text>
-        <image class="img" bindtap="comment" data-index="{{index}}" src="/resources/image/my/comment.png" mode="widthFix"></image>
+     
+          <image class="img" bindtap="comment" data-index="{{index}}" src="/resources/image/my/comment.png" mode="widthFix"></image>
         
         <view></view>     
-        <image class="img" src="/resources/image/my/transpond.png" mode="widthFix" bindtap="share"> </image> 
-
+        <label for="btnId" >
+          <button open-type="share" id="btnId" style="display:hidden" bindtap='clickToShare'></button>
+          <image class="img" src="/resources/image/my/transpond.png" mode="widthFix" bindtap="share"> </image> 
+        </label>
 
       </view>  
 
@@ -32,6 +35,6 @@
 </block>
 <!-- input键盘框是单独出现的，不用包含在这些乱七八糟的循环里 -->
 <input_box bind:inputMsg="bind_send_msg" need_input="{{input}}"/>
-<!-- <half-screen-dialog dialog="{{need_half_screen}}"/>
-<image class="add" src="/resources/icons/add.png" mode="widthFix" bindtap="handle_add_tap"></image> -->
+<!-- <half-screen-dialog dialog="{{need_half_screen}}"/>-->
+<image class="add" src="/resources/icons/add.png" mode="widthFix" bindtap="handle_add_tap"></image> 
 

@@ -195,6 +195,10 @@ Page({
    */
   onLoad: function (options) {
     systemInfo=wx.getSystemInfoSync();
+    console.log(options)
+    // this.setData({
+    //   imgUrl:options.img_url
+    // })
   },
 
   /**

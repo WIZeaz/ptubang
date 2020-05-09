@@ -8,12 +8,17 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    "blockInfo": Object
+    "blockInfo": Object,
+    "my_name":{
+      type:String,
+      value:"游客"
+    }
   },
   /**
    * 组件的初始数据
    */
   data: {
+    
     input:0,
     currentMSGIndex:0,
     need_half_screen:false
@@ -28,7 +33,7 @@ Component({
       let temp=this.data.blockInfo//最终效果应该是去服务器刷新一遍拿数据回来
       let index=res.currentTarget.dataset.index//分辨是第几张图片
       temp[index].liked=1-temp[index].liked
-
+      temp[index].like=temp[index].like-1+2*temp[index].liked
       
 
       
@@ -38,8 +43,8 @@ Component({
       })
     },
     handle_add_tap(){
-    this.setData({
-      need_half_screen:true
+    wx.navigateTo({
+      url: '/pages/newActivity/newActivity',
     })
     
     
@@ -54,7 +59,7 @@ Component({
       let index=this.data.currentMSGIndex
       let name=temp[index].user.name
 
-      temp[index].comments=temp[index].comments.concat([{userName:name,content:msg}])
+      temp[index].comments=temp[index].comments.concat([{userName:this.data.my_name,content:msg}])
       console.log(temp)
       //temp[index].liked=1-temp[index].liked
       this.setData({

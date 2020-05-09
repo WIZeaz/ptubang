@@ -28,7 +28,7 @@
 }
 .add{
   position: fixed;
-  bottom: 80rpx;
+  top: 40rpx;
   right:40rpx;
   width:10%;
   text-align: right;

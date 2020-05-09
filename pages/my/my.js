@@ -12,8 +12,11 @@ Page({
       "name":"WIZeaz",
       "profilePhotoUrl":"/resources/icons/ic_chat_black_48dp.png"
     },
-    "imgUrl1":"/resources/icons/ic_person_black_48dp.png",
-    "imgUrl2":"/resources/icons/ic_person_outline_black_48dp.png",
+    
+
+
+    "imgUrl1":"/resources/image/my/bpic1.jpg",
+    "imgUrl2":"/resources/image/my/bpic2.jpg",
     "like":12,
     "num_of_start_ac":2,
     "num_of_join_ac":2,
@@ -90,10 +93,16 @@ Page({
   index2:function(){
     this.setData({ index:false})
   },
-  gotoTalkpage:function()
+  gotoTalkpage1:function()
   {
     wx.navigateTo({
-      url: '/pages/activity/activity',
+      url: '/pages/activity/activity?img_url='+this.data.imgUrl1,
+    })
+  },
+  gotoTalkpage2:function()
+  {
+    wx.navigateTo({
+      url: '/pages/activity/activity?img_url='+this.data.imgUrl2,
     })
   }
 })

@@ -6,40 +6,42 @@ Page({
    */
   data: {
     img_url:"/resources/image/my/bpic2.jpg",
+
     title:" ",
     like:" ",
-    time:" ",
+    time:["2020年5月4号","2020年4月14号","2020年3月28号"],
     currentIndex:"0",
-    test:[{
+  test:[{
+
       "user":{
-        "name":"zyh",
-        "profilePhotoUrl":"/resources/icons/ic_chat_black_48dp.png"
+        "name":"yeyan777",
+        "profilePhotoUrl":"/resources/test_img/yy.jpg"
       },
       "imgUrl":"/resources/image/my/bpic1.jpg",
-      "like":12,
+      "like":81,
       "liked":0,
-      "comments_num":12,
+      "comments_num":2,
       "comments":[
-        {"userName":"wizeaz", "content":"123"},{"userName":"wizeaz1", "content":"123"}
+        {"userName":"WIZeaz", "content":"我觉得不太行"},{"userName":"不务正业的程序猿", "content":"你P了哪啊？"}
       ]
     },
     {
       "user":{
-        "name":"wwwww",
-        "profilePhotoUrl":"/resources/icons/ic_chat_black_48dp.png"
+        "name":"BOGE",
+        "profilePhotoUrl":"/resources/test_img/cb.jpg"
       },
       "imgUrl":"/resources/image/my/bpic2.jpg",
-      "like":122,
+      "like":52,
       "liked":1,
       "comments_num":12,
       "comments":[
-        {"userName":"wizeaz", "content":"234"}
+        {"userName":"yeyan777", "content":"这个P的还能看，你赞有了"}
       ]
     }
     ]
     ,
     ranklist:[
-      {name:"蔡徐坤",head_url:"/resources/image/tabbar/edit-profile.png",title:"我画什么都是及你太美",like:9999,comment:52,id:12352,img_url:"/resources/image/my/bpic2.jpg"},{name:"刘根生",title:"我画什么都是刘根生",head_url:"/resources/image/tabbar/edit-profile.png",like:8888,comment:281,id:36221,img_url:"/resources/image/my/bpic2.jpg"},{name:"张三丰",head_url:"/resources/image/tabbar/edit-profile.png",title:"打太极",like:7777,comment:281,id:43715,img_url:"/resources/image/my/bpic2.jpg"}
+      {name:"BOGE",head_url:"/resources/test_img/cb.jpg",title:"",like:254,comment:52,id:12352,img_url:"/resources/image/my/bpic2.jpg"},{name:"yeyan777",title:"",head_url:"/resources/test_img/yy.jpg",like:202,comment:12,id:36221,img_url:"/resources/image/my/bpic2.jpg"},{name:"WIZeaz",head_url:"/resources/test_img/zyh.jpg",title:"划水p图",like:158,comment:11,id:43715,img_url:"/resources/image/my/bpic2.jpg"}
     ],//最好是直接有个id，用网络请求去拿就行,接口感觉要商量下
     swiperList:["/resources/image/my/bpic2.jpg","/resources/image/my/bpic2.jpg","/resources/image/my/bpic2.jpg"]
   },
@@ -58,38 +60,14 @@ Page({
       like:options.like,
       title:options.title,
       time:options.time,
-
+      swiperList:[options.img_url,options.img_url,options.img_url]
     })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
+ 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -112,9 +90,9 @@ Page({
   },
   navigateTo: function(e){
     let url=e.currentTarget.dataset.url;
-    console.log(url);
+    console.log( url+"?img_url="+this.data.imgUrl);
     wx.navigateTo({
-      url: url,
+      url: url+"?img_url="+this.data.img_url,
     });
   }
 })

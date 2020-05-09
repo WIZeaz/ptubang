@@ -5,17 +5,17 @@
     <image class="message_img"src="{{item.src}}" mode="widthFix"></image>
     <view class="describtion" wx:if="{{item.type==0}}">
       <text class="name">{{item.name}}</text> 
-      <text>赞了你的作品</text> <text class="title"> {{item.title}}</text>
+      <text>赞了你的作品</text> 
     </view>
     <view class="describtion" wx:if="{{item.type==1}}">
       <text class="name">{{item.name}}</text> 
-      <text>评论了你的作品 </text> <text class="title">{{item.title}}</text> 
+      <text>评论了你的作品 </text>
       <text>:{{item.content}}</text>
     </view>
     <view class="describtion" wx:if="{{item.type==2}}">
-      <text>你的作品</text>
+      <text>你的作品 </text>
       <text class="title">{{item.title}}</text>   
-      <text>夺得了排行榜第{{item.rank}}名</text>
+      <text> 夺得了排行榜第{{item.rank}}名</text>
     </view>
   </view>
 
