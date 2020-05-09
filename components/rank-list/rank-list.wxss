@@ -1,0 +1,31 @@
+/* components/rank-list/rank-list.wxss */
+.img{
+  width: 100%;
+}
+.outer-container{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.inner-container{
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 1fr;
+  margin-top: 20rpx;
+}
+.rank_img{
+  width: 100%;
+}
+.head_info{
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+}
+
+.head_img{
+  margin-left: 20rpx;
+  width:70%
+}
+.like_img{
+width: 50%;
+}
+.comment_img{
+  width:50%
+}

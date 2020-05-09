@@ -1,10 +1,11 @@
-// pages/info/info.js
+// pages/message/message.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    message:[{type:0,name:"周杰伦",title:"goodjob",src:"/resources/image/my/pic1.jpg"},{type:1,name:"张杰伦",title:"GodV",content:"不错",src:"/resources/image/my/pic1.jpg"},{type:2,title:"superme",rank:1,src:"/resources/image/my/pic1.jpg"}]//定义接口，type是类型，名字是对象
 
   },
 

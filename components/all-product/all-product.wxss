@@ -1,0 +1,62 @@
+/* pages/new/new.wxss */
+.container1{
+
+
+  margin-bottom: 50rpx;
+}
+.container2{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 6fr 1fr;
+  border-bottom: 2px solid #DCDFE6;
+  border-top: 2px solid #DCDFE6;
+}
+.img{
+  width: 100%;
+}
+.comment{
+  margin-bottom: 15rpx;
+}
+.air-gap{
+  margin-bottom: 40rpx;
+}
+.bckimg{
+  background-image: "/resources/image/my/comment.png";
+}
+
+.button{
+  font-size: small;
+}
+.add{
+  position: fixed;
+  bottom: 80rpx;
+  right:40rpx;
+  width:10%;
+  text-align: right;
+}
+.outer-box{
+  display: grid;
+  grid-template-columns: 20%  80%;
+  overflow-wrap: break-word;
+  justify-items: auto;
+ 
+}
+.word{
+  color:#409EFF;
+  font-weight: bold;
+  font-size: large;
+  margin-left:20rpx;
+  margin-top:20rpx
+}
+.name{
+  color:#409EFF;
+  font-weight: bold;
+  
+}
+.text{
+  text-align: center;
+
+
+}
+.box1{
+  width: 100%;
+}

@@ -1,1 +1,26 @@
 /* pages/info/info.wxss */
+/* pages/message/message.wxss */
+.outer-container{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.inner-container{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid #DCDFE6;
+  border-top: 1px solid #DCDFE6;
+}
+.describtion{
+
+}
+.message_img{
+  width: 100%;
+  margin-top:20rpx;
+  margin-bottom: 20rpx;
+}
+.name{
+font-weight: bold;
+}
+.title{
+  color: #F56C6C;
+}

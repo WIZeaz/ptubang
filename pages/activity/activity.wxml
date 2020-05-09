@@ -1,0 +1,24 @@
+<!--pages/activity/activity.wxml-->
+<tab-control bind:tab-control-cilck="bind_tab_control" button_names="{{['原图','排行榜','全部作品','我的作品']}}"/>
+ <view wx:if="{{currentIndex==0}}">
+  <image class="img" src="{{img_url}}" mode="widthFix"></image>
+  <view bindtap="navigateTo" data-url="/pages/editor/editor">开始创作</view>
+</view>
+<view wx:if="{{currentIndex==1}}">
+<rank-list ranklist="{{ranklist}}"/>
+<view class="word">
+</view>
+  
+<w-swiper list="{{swiperList}}"/>
+
+</view>
+<view wx:if="{{currentIndex==2}}"> 
+ <all-product blockInfo="{{test}}"/> 
+</view>
+<view wx:if="{{currentIndex==3}}">
+<view  class="outer-container2" wx:for="{{3}}">
+
+  <view>2020年9月14号</view>
+  <image class="img" src="{{img_url}}" mode="widthFix"></image>
+</view>
+</view> 

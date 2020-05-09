@@ -1,0 +1,23 @@
+/* components/tab-control/tab-control.wxss */
+
+.outer-box{ 
+  border-top:1px solid grey;
+  height: 60rpx;
+  display: flex;
+  background-color: red;
+}
+.inner-box{
+  height: 100%;
+  background: white;
+  flex:1;
+  text-align: center;
+  border-right:2px solid grey;
+  border-bottom: 1px solid grey;
+}
+.active{
+  background-color:#33FFFF;
+
+  border-bottom: solid pink;
+  padding:10px,0 ;
+
+}

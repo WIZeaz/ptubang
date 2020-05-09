@@ -1,0 +1,26 @@
+<!--components/rank-list/rank-list.wxml-->
+<view  class="outer-container">
+  <view class="title"> </view>
+  <block wx:for="{{ranklist}}" wx:key="index">
+  <view class="inner-container">
+    <image class="rank_img" src='{{"/resources/image/rank/"+(index+1)+".png"}}' mode="widthFix"></image>
+    <view class="head_info">
+      <image class="head_img" src="{{item.head_url}}" mode="widthFix"></image>
+      <view>
+        <view>{{item.name}}</view>
+        <view>{{item.title}}</view>
+      </view>
+
+    </view>
+
+    <view>
+      <image class="like_img" src="/resources/image/my/like_active.png" mode="widthFix"></image>
+      <view>{{item.like}}</view>
+    </view>
+    <view>
+      <image class="comment_img" src="/resources/image/my/comment.png" mode="widthFix"></image>
+      <view>{{item.comment}}</view>
+    </view>
+  </view>
+  </block>
+</view>

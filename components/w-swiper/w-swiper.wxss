@@ -1,0 +1,21 @@
+
+.swiper{
+  width: 100%;
+ 
+
+
+
+}
+.swiper-item{
+
+  width: 100%;
+}
+.swiper-item-img{
+ margin-left: 10%;
+ margin-right: 10%;
+  width:80%
+}
+.word{
+  text-align: center;
+  font-weight: bold;
+}

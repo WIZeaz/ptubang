@@ -1,0 +1,11 @@
+<!--components/input_box/input_box.wxml-->
+
+<view wx:if="{{need_input}}" class="input-flew" ><!-- catchtap="inputFocus" -->
+
+    <view class="input-view">
+        <input type='text' placeholder="评论" confirm-hold="{{true}}" bindinput='inputValue'  cursor-spacing='{{keyboardHeight}}' focus="{{focus||isFocus}}" value="{{inputVal}}" ></input>
+    </view>
+
+    <view class="sentBtn {{have_msg==0? '':'color_but'}}"  bindtap="_send">发送</view>
+</view>
+

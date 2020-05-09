@@ -1,0 +1,53 @@
+<view class="page" data-weui-theme="{{theme}}">
+
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                          <view class="weui-uploader__overview">
+                              <view class="weui-uploader__title">图片上传</view>
+                              <!-- <view class="weui-uploader__info">{{files.length}}/2</view> -->
+
+                          </view>
+                          <view class="weui-uploader__tips">
+                            上传一张图片，邀请你的好友参与相关创作吧！
+                          </view>
+                        </view>
+                        <view class="mid_choose_uploader">
+                            <view class="weui-uploader__bd">
+                                <view class="weui-uploader__input-box">
+                                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                                </view>
+                            </view>
+                            <view>
+                                <block wx:for="{{files}}" wx:key="*this">
+
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+
+                                </block>
+                            </view> 
+                        </view>                       
+                        <view class="weui-uploader__hd">
+                          <view class="weui-uploader__overview">
+                              <view class="weui-uploader__title">对创作的要求或者建议（可以为空）</view>
+                              <!-- <view class="weui-uploader__info">{{files.length}}/2</view> -->
+                              
+                          </view>
+                         
+
+                        <view class="bd">
+							<textarea maxlength="120" value="{{info}}" bindinput="handle_input" class="textarea" placeholder="" rows="3"></textarea>
+							<view class="weui-textarea-counter"><text>{{noteNowLen}}</text>/120</view>
+						</view> 
+                        <view class="submmit" bindtap="send">提交</view>
+                        </view>                        
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

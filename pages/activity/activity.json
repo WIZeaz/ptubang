@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "all-product":"/components/all-product/all-product",
+    "tab-control":"/components/tab-control/tab-control",
+    "show_block":"/components/show_block/show_block",
+  "rank-list":"/components/rank-list/rank-list",
+  "w-swiper":"/components/w-swiper/w-swiper"
+},
+
+  "navigationBarTitleText":"活动"
+}

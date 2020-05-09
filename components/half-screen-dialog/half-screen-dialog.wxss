@@ -1,0 +1,46 @@
+@import "../../weui.wxss";
+.back{
+  font-size: medium;
+  font-weight: bold;
+}
+.outer-box{
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+.top-bar{
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+}
+.close_icon{
+  width: 50%;
+}
+.submmit{
+  height: 60rpx;
+  font-size: medium;
+  font-weight:bold;
+  text-align: center;
+  background-color: #67C23A;
+  color: white;
+  border-radius: 10rpx;
+}
+.word{
+  color: #303133;
+}
+.plus{
+  width: 80rpx;
+  left: auto;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+.input-container{
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+
+}
+.input{
+
+  border-bottom: 1px solid black;
+  border-top:  1px solid black;
+  border-left:  1px solid black;
+  border-right: 1px solid black;
+}

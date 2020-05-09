@@ -1,0 +1,31 @@
+<view class="page">
+
+
+    <view class="fadeIn" wx:if="{{dialog}}">
+        <view class="weui-mask" bindtap="close"></view>
+        <view class="weui-half-screen-dialog">
+            <view class="weui-half-screen-dialog__hd top-bar">
+           
+              <image class="close_icon" bindtap="close" src="/resources/icons/close.png" mode="widthFix"></image>
+              <view></view>
+              <view class="submmit">提交</view>
+            
+            </view>
+            <view class="weui-half-screen-dialog__bd">
+                <view class="weui-half-screen-dialog__tips word">
+                    上传一张图片，邀请你的好友创作相关作品吧！
+                <button>上传图片</button>
+                <image class="plus" src="/resources/icons/add2.png" mode="widthFix"></image>
+                </view>
+                <view class="weui-half-screen-dialog__desc">
+                    对创作的要求或建议（可以为空）
+                </view>
+                <view class="input-container">
+                  <text>输入内容:</text>
+                  <input class="input"></input>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>

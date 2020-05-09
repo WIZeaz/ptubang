@@ -1,2 +1,2 @@
-<!--pages/newActivity/newActivity.wxml-->
-<text>pages/newActivity/newActivity.wxml</text>
+<upload-img />
+<textarea class="weui-textarea" placeholder="" rows="2"></textarea>
