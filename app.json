@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/invite/invite",
+    "pages/share_link/share_link",
+    "pages/endpage/endpage",
     "pages/editor/editor",
     "pages/my/my",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/info/info",
     "pages/newActivity/newActivity"

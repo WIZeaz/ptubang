@@ -1,0 +1,22 @@
+/* pages/share_link/share_link.wxss */
+@import "../../weui.wxss";
+
+.bd{
+  border-bottom: 1px solid #DCDFE6;
+  border-top: 1px solid #DCDFE6;
+  border-left: 1px solid #DCDFE6;
+  border-right: 1px solid #DCDFE6;
+
+}
+.submmit{
+  margin-top: 50rpx;
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+  height: 60rpx;
+  font-size: medium;
+  font-weight:bold;
+  text-align: center;
+  background-color: #67C23A;
+  color: white;
+  border-radius: 10rpx;
+}

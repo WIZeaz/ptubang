@@ -1,0 +1,73 @@
+/* components/invite.wxss */
+
+.shape-circle{
+  border-radius: 50%;
+  border: 1px solid #393D49;
+  box-sizing: border-box;
+}
+
+.block-header{
+  line-height: 1.5rem;
+}
+.profile-photo{
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.span{
+  display:inline-block;
+}
+
+.block-comments{
+  width: 100%;
+}
+
+#wrapper{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1px 400px
+}
+
+.item {
+  font-size: 1.5em;
+  text-align: center;
+  
+}
+
+.item-1 {
+  background-color: #ef342a;
+}
+
+.item-2 {
+  background-color: #f68f26;
+}
+
+.item-3 {
+  background-color: #4ba946;
+}
+
+.item-4 {
+  background-color: #0376c2;
+}
+
+.item-5 {
+  background-color: #c077af;
+}
+
+.item-6 {
+  background-color: #f8d29d;
+}
+
+button{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.button-sp-area{
+  margin: 0 auto;
+  width: 60%;
+  color: #409EFF;
+}
+.mini-btn{
+  margin-right: 10rpx;
+}

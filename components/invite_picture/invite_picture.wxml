@@ -1,0 +1,32 @@
+<!--components/invite_picture.wxml-->
+<view class="blocks">
+ 
+<view class="item"></view>
+<view class="item">
+       <span style="font-size:30px">您收到了一个活动邀请 </span>
+       </view>
+       <view class="item"></view>
+       <view class="item"></view>
+<view class="item">
+       <span style="font-size:20px" >让我们一起帮"{{blockInfo.user}}"P图吧 </span>
+       </view>
+       <view class="item"></view>
+   
+   <view class="space">
+    <text>----------------------------------------------   </text>
+    </view>
+  <view class="item"></view>
+  <view class="item">
+  <image class="the_pic" src="{{blockInfo.imgUrl}}" mode="widthFix" ></image></view>
+  <view class="item"></view>
+  <view><text>----------------------------------------------   </text></view>
+  <view class="item"></view>
+  <view class="item">
+  <span style="font-size:25px">对作品的要求/建议：{{blockInfo.requests}}</span>
+  </view>
+  <view class="item"></view>
+ 
+  <view class="button-sp-area">
+ <button type="primary">加入活动</button>
+ </view>
+ </view>

@@ -1,0 +1,8 @@
+<!--invite.wxml-->
+
+<view class="container">
+<showBlock blockInfo="{{test}}">
+</showBlock>
+
+
+</view>

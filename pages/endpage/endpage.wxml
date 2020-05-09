@@ -1,0 +1,23 @@
+<!--page/endpage/endpage.wxml-->
+
+
+<div class="weui-msg">
+    <div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
+    <div class="weui-msg__text-area">
+        <h2 class="weui-msg__title">分享成功</h2>
+        <view>
+        <p class="weui-msg__desc">您已成功分享给您的好友</p>
+        </view>
+    </div>
+    <div class="weui-msg__opr-area">
+        <p class="weui-btn-area">
+            <navigator url="/pages/share_link/share_link" > 
+               <a href="javascript:history.back();" class="weui-btn weui-btn_primary">再次分享</a>
+             </navigator>
+            
+            <a href="javascript:history.back();" class="weui-btn weui-btn_default">完成</a>
+        </p>
+    </div>
+   
+   
+</div>
