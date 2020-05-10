@@ -13,7 +13,7 @@
 
 </view>
 <view wx:if="{{currentIndex==2}}"> 
- <all-product blockInfo="{{test}}"/> 
+ <show_block blockInfo="{{test}}"/> 
 </view>
 <view wx:if="{{currentIndex==3}}">
 <view  class="outer-container2" wx:for="{{3}}">

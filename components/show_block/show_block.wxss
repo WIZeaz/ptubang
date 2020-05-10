@@ -45,13 +45,7 @@
 .button{
   font-size: small;
 }
-.add{
-  position: fixed;
-  bottom: 40rpx;
-  right: 40rpx;
-  width:10%;
-  text-align: right;
-}
+
 
 .text-title{
   display: inline-block;

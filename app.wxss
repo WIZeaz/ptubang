@@ -1,6 +1,8 @@
 /**app.wxss**/
 page{
   font-size: 32rpx;
+
+  /*background-color: rgb(237, 240, 242);*/
 }
 .container {
   background-color: #FFFFFF;
@@ -134,3 +136,8 @@ page{
 .background-white{
   background-color: #ffffff;
 }
+
+.font-bold{
+  font-weight: bold;
+}
+

@@ -28,8 +28,9 @@
     </view>
   </view>
 </block>
+
+
+
 <!-- input键盘框是单独出现的，不用包含在这些乱七八糟的循环里 -->
 <input_box bind:inputMsg="bind_send_msg" need_input="{{input}}"/>
 <!-- <half-screen-dialog dialog="{{need_half_screen}}"/>-->
-<image class="add" src="/resources/icons/ic_add_circle_outline_black_48dp.png" mode="widthFix" bindtap="handle_add_tap"></image> 
-

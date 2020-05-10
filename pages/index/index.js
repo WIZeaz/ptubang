@@ -92,6 +92,11 @@ Page({
     })},
    })
 
- }
+ },
+ handle_add_tap(){
+  wx.navigateTo({
+    url: '/pages/newActivity/newActivity',
+  })
+}
 })
 

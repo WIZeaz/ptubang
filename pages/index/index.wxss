@@ -19,3 +19,11 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.add{
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  width:10%;
+  text-align: right;
+}

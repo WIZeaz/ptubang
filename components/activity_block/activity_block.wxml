@@ -1,0 +1,12 @@
+<!--components/activity_block/activity_block.wxml-->
+<view class="row activity-box">
+<image src="{{imgUrl}}" class="activity-img" mode="widthFix"></image>
+<view class="activity-textholder">
+    <view class="leftmost activity-text font-small">
+      {{num}}
+    </view>
+    <view class="rightmost activity-text font-small color-info">
+      {{time}}
+    </view>
+</view>
+</view>

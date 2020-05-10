@@ -1,23 +1,35 @@
-
+page{
+  /*background-color: rgb(237, 240, 242);*/
+}
 .img{
-  margin:15px;
-  width: 5.5rem;
-  height:5.5rem;
+  margin:30rpx;
+  width: 180rpx;
+  height:180rpx;
   border-radius:50%;
   overflow:hidden;
   display:flex;
+  border: black 1rpx solid;
+}
+.activity-navbar{
+  margin-bottom:20rpx;
+  border-radius: 20rpx;
+  border: #E4E7ED 3rpx solid;
+  overflow: hidden;
 }
 .button {
   border: none;
   color: #000000;
-  padding-top: 16px;
   text-decoration: none;
   display: inline-block;
-  font-size: 18.5px;
   cursor: pointer;
 }
+.nickname{
+  padding-top: 22rpx;
+  padding-left: 30rpx;
+  padding-bottom: 40rpx;
+}
 .big{
-  line-height:50px
+  line-height:70rpx
 }
 .margin{
    margin:10px;
@@ -26,4 +38,21 @@
   width: 0;
   height: 0;
   color: transparent;
-  }
+}
+
+.container{
+  max-width: 700rpx;
+  margin: 0 auto;
+}
+
+.space-10{
+  margin:0 20rpx 0 20rpx;
+}
+
+.main{
+  background-color: #409EFF;
+}
+
+.border-left{
+  border-left:#DCDFE6 2rpx solid;
+}

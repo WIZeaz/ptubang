@@ -34,24 +34,11 @@ Component({
       let index=res.currentTarget.dataset.index//分辨是第几张图片
       temp[index].liked=1-temp[index].liked
       temp[index].like=temp[index].like-1+2*temp[index].liked
-      
-
-      
       this.setData({
         blockInfo:temp
-      
       })
     },
-    handle_add_tap(){
-    wx.navigateTo({
-      url: '/pages/newActivity/newActivity',
-    })
-    
-    
-    
-    }
-    
-    ,
+
     bind_send_msg(res){
       console.log(res)
       let temp=this.data.blockInfo
@@ -76,7 +63,6 @@ Component({
     },
 
     comment(res){
- 
       let index=res.currentTarget.dataset.index//分辨是第几条消息
       if(this.data.input==0)
       {this.setData({input:1-this.data.input,currentMSGIndex:index//记录是第几条消息在被评论
@@ -87,7 +73,5 @@ Component({
         })
       }
     }
-
-
   }
 })

@@ -4,5 +4,6 @@
 <showBlock blockInfo="{{test}}" my_name="{{userInfo.nickName}}">
 </showBlock>
 
+<image class="add" src="/resources/icons/ic_add_circle_outline_black_48dp.png" mode="widthFix" bindtap="handle_add_tap"></image> 
 
 </view>

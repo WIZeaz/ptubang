@@ -44,13 +44,11 @@ class Token {
             console.log(userInfo);
             wx.login({
                 success: function (res) {
+                    userInfo.token=res.code;
                     wx.request({
                         url: that.tokenUrl,
                         method:'POST',
-                        data:{
-                            code:res.code,
-                            userInfo:userInfo
-                        },
+                        data:userInfo,
                         success:function(res){
                             console.log(res);
                             wx.setStorageSync('token', res.data.token);

@@ -6,50 +6,48 @@
      <open-data type="userAvatarUrl" class="img"></open-data>
     </view>
     <view class="col-8">
-     <view class="big"><open-data type="userNickName" lang="zh_CN" class="font-18 x-center"></open-data></view>
+     <view class="nickname font-big"><open-data type="userNickName" lang="zh_CN" class="font-18 x-center"></open-data></view>
      <view class="col">
-      <view class="col-4 x-center" style="font-size:15px">{{num_of_start_ac}}</view>
-      <view class="col-4 x-center" style="font-size:15px">{{num_of_join_ac}}</view>
-      <view class="col-4 x-center" style="font-size:15px">{{like}}</view>
+      <view class="col-4 x-center font-giant" >{{num_of_start_ac}}</view>
+      <view class="col-4 x-center font-giant border-left">{{num_of_join_ac}}</view>
+      <view class="col-4 x-center font-giant border-left">{{like}}</view>
      </view>
      <view class="col">
-      <view class="col-4 font-12 x-center">发起活动</view>
-      <view class="col-4 font-12 x-center">参与活动</view>
-      <view class="col-4 font-12 x-center">获得点赞</view>
+      <view class="col-4 font-small x-center">发起活动</view>
+      <view class="col-4 font-small x-center border-left">参与活动</view>
+      <view class="col-4 font-small x-center border-left">获得点赞</view>
      </view>
     </view>
   </view>
+
+   <view class="col big activity-navbar font-normal">
+    <view class="col-6 x-center button {{index==true?'main':''}}" bindtap="index1">{{my_join_ac}}</view>
+    <view class="col-6 x-center button {{index==false?'main':''}}" bindtap="index2">{{my_start_ac}}</view>
+   </view>
+
   <view wx:if="{{index==true}}">
-   <view class="col big">
-    <view class="col-6 x-center button color-primary" bindtap="index1">{{my_join_ac}}</view>
-    <view class="col-6 x-center button" bindtap="index2">{{my_start_ac}}</view>
-   </view>
-   <view class="col">
-   <view></view>
-    <view class="col-6 x-center button margin" bindtap="gotoTalkpage1"><image class="img" src="{{imgUrl1}}"> </image></view>
-    <view class="col-6 x-center button margin" bindtap="gotoTalkpage2"><image class="img" src="{{imgUrl2}}"> </image></view>
-   </view>
-   <view class="col">
-    <view class="col-3 x-left margin">天行九歌</view>
-    <view class="col-3 x-right margin">3天前</view>
-    <view class="col-3 x-left margin">壁纸</view>
-    <view class="col-3 x-right margin">12天前</view>
-   </view>
+    <view class="block">
+      <view class="col">
+        <view class="col-6 space-10">
+          <activity_block imgUrl="{{imgUrl1}}" time="三天前" num="12" bindtap="gotoTalkpage1"> </activity_block>
+        </view>
+        <view class="col-6 space-10">
+          <activity_block imgUrl="{{imgUrl2}}" time="三天前" num="23" bindtap="gotoTalkpage2"> </activity_block>
+        </view>
+      </view>
+    </view>
+   
   </view>
   <view wx:if="{{index==false}}">
-    <view class="col big">
-    <view class="col-6 x-center button" bindtap="index1">{{my_join_ac}}</view>
-    <view class="col-6 x-center button color-primary" bindtap="index2">{{my_start_ac}}</view>
+  <view class="block">
+      <view class="col">
+        <view class="col-6 space-10">
+          <activity_block imgUrl="{{imgUrl1}}" time="三天前" num="12" > </activity_block>
+        </view>
+        <view class="col-6 space-10">
+          <activity_block imgUrl="{{imgUrl2}}" time="三天前" num="23" > </activity_block>
+        </view>
+      </view>
     </view>
-    <view class="col">
-    <view class="col-6 x-center button margin"><image class="img" src="{{imgUrl1}}"> </image></view>
-    <view class="col-6 x-center button margin"><image class="img" src="{{imgUrl2}}"> </image></view>
-   </view>
-    <view class="col">
-    <view class="col-3 x-left margin">每日一刷</view>
-    <view class="col-3 x-right margin">23天前</view>
-    <view class="col-3 x-left margin">唯美剧照</view>
-    <view class="col-3 x-right margin">1天前</view>
-   </view>    
   </view>
 </view>
