@@ -46,7 +46,7 @@ Component({
       let index=this.data.currentMSGIndex
       let name=temp[index].user.name
 
-      temp[index].comments=temp[index].comments.concat([{userName:this.data.my_name,content:msg}])
+      temp[index].comments=temp[index].comments.concat([{userName:"姜饼。。",content:msg}])
       console.log(temp)
       //temp[index].liked=1-temp[index].liked
       this.setData({
