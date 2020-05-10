@@ -1,4 +1,7 @@
 // components/upload-img/upload-img.js
+import {UploadHelper} from './UploadHelper';
+import { UserHelper } from '../../utils/UserHelper';
+let uploadHelper=new UploadHelper();
 Component({
   /**
    * 组件的属性列表
@@ -62,21 +65,39 @@ Component({
         
         })
       },
-      send(res){
-        let msg=this.data.info
-        if (msg!="")
-          {this.setData({
-            info:"",
-            noteNowLen:0,
-            files:[]
+    send(e){
+      let msg=this.data.info
 
-          })
-          this.triggerEvent("send_msg",{msg:msg},{})
-          wx.navigateTo({
-            url: '/pages/share_link/share_link',
-          })
-          
-        }
+      if (this.data.files.length==0){
+        wx.showToast({
+          title: '您还未上传图片！',
+          icon: 'none'
+        })
+        return;
+      }
+      wx.showLoading({
+        title: '正在创建活动……',
+      })
+      uploadHelper.createActivity(this.data.files[0],this.data.info,(res)=>{
+        console.log(res);
+        wx.hideLoading({
+          complete: (res) => {},
+        })
+        wx.redirectTo({
+          url: '/pages/share_link/share_link',
+        });
+      });
+      /*if (msg!=""){
+        this.setData({
+          info:"",
+          noteNowLen:0,
+          files:[]
+        })
+        this.triggerEvent("send_msg",{msg:msg},{})
+        wx.navigateTo({
+          url: '/pages/share_link/share_link',
+        });
+      }*/
     }
   }
 })

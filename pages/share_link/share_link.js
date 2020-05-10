@@ -8,8 +8,6 @@ Page({
       
       "imgUrl":"/resources/icons/test_pic.jpg",
      
-      
-      
     }
   },
   //事件处理函数

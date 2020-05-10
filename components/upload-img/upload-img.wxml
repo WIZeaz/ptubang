@@ -40,7 +40,7 @@
                          
 
                         <view class="bd">
-							<textarea maxlength="120" value="{{info}}" bindinput="handle_input" class="textarea" placeholder="" rows="3"></textarea>
+							<textarea maxlength="120" model:value="{{info}}"  class="textarea" placeholder="" rows="3"></textarea>
 							<view class="weui-textarea-counter"><text>{{noteNowLen}}</text>/120</view>
 						</view> 
                         <view class="submmit" bindtap="send">提交</view>

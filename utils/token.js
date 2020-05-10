@@ -41,10 +41,9 @@ class Token {
         var that  = this;
         wx.getUserInfo({success:(res)=>{
             let userInfo=res.userInfo;
-            console.log(userInfo);
             wx.login({
                 success: function (res) {
-                    userInfo.token=res.code;
+                    userInfo.code=res.code;
                     wx.request({
                         url: that.tokenUrl,
                         method:'POST',

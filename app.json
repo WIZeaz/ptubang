@@ -1,18 +1,16 @@
 {
-  "pages": [  
+  "pages": [
     "pages/index/index",
     "pages/share_link/share_link",
     "pages/endpage/endpage",
-  
     "pages/invite/invite",
-    
-    
     "pages/editor/editor",
     "pages/my/my",
     "pages/logs/logs",
     "pages/info/info",
     "pages/newActivity/newActivity",
-    "pages/activity/activity"
+    "pages/activity/activity",
+    "pages/authorize/authorize"
   ],
   "window": {
     "backgroundTextStyle": "light",

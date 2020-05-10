@@ -9,7 +9,30 @@ class Base {
         this.baseRestUrl = Config.restUrl;
         this.onPay=Config.onPay;
     }
-
+    uploadFile(params,_refetch=true){
+        let that = this;
+        let url=this.baseRestUrl+params.url;
+        wx.uploadFile({
+          filePath: params.filePath,
+          name: 'file',
+          url: url,
+          header:{
+              'Authorization': wx.getStorageSync('token')
+          },
+          success(res){
+              console.log(res);
+              let statusCode=res.statusCode.toString();
+              if (statusCode=='200'){
+                  params.sCallback&&params.sCallback(res.data);
+              } else if (_refetch){
+                  let token=new Token();
+                  token.getTokenFromServer((res)=>{
+                      this.uploadFile(params,false);
+                  })
+              }
+          }
+        })
+    }
     //http 请求类, 当noRefetch为true时，不做未授权重试机制
     request(params, noRefetch) {
         var that = this,
@@ -38,10 +61,8 @@ class Base {
                 if (startChar == '2') {
                     params.sCallback && params.sCallback(res.data);
                 } else {
-                    if (code == '401') {
-                        if (!noRefetch) {
-                            that._refetch(params);
-                        }
+                    if (!noRefetch) {
+                        that._refetch(params);
                     }
                     that._processError(res);
                     params.eCallback && params.eCallback(res.data);
@@ -70,6 +91,14 @@ class Base {
     getDataSet(event, key) {
         return event.currentTarget.dataset[key];
     };
+    downlowdFile(url,callback){
+        wx.downloadFile({
+          url: this.baseRestUrl+url,
+          success: (res)=>{
+              callback&&callback(res.tempFilePath);
+          }
+        })
+    }
 };
 
 export {Base};

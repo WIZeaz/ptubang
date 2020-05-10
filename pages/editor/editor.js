@@ -1,7 +1,10 @@
 // pages/editor/editor.js
+import {Base} from '../../utils/base';
 const ImageFilters = require('../../utils/weImageFilters/weImageFilters.js');
 const Helper = require('../../utils/weImageFilters/weImageFiltersHelper.js');
+const app=getApp();
 
+let base=new Base();
 let helper;
 let imageData;
 let tempImageData;
@@ -185,9 +188,10 @@ Page({
     filterList:filterKeys,
     toolList:toolList,
     toolSettingId:-1,
-    text:"测试文本",
+    text:"",
     fontsize:20,
-    tempImageUrl:""
+    tempImageUrl:"",
+    activitiId:0,
   },
 
   /**
@@ -197,7 +201,8 @@ Page({
     systemInfo=wx.getSystemInfoSync();
     console.log(options)
     this.setData({
-       imgUrl:options.imgUrl
+       imgUrl:options.imgUrl,
+       activityId:options.activityId
     });
   },
 
@@ -370,5 +375,37 @@ Page({
         }
       })
     }
+  },
+  saveImage: function(e){
+    const that=this;
+    wx.showLoading({
+      title: '保存中',
+    })
+    helper.getImageTempFilePath(res=>{
+      base.uploadFile({
+        filePath:res,
+        url:'file/upload',
+        sCallback:(res)=>{
+          let imgUrl=res;
+          base.request({
+            url:'repics/publish',
+            type:'POST',
+            data:{
+              maid:that.data.activityId.toString(),
+              pic_url:imgUrl,
+              username:app.globalData.userInfo.nickName,
+              userid:app.globalData.user.id.toString(),
+              content:"none"
+            },
+            sCallback:res=>{
+              console.log(res);
+            }
+          }
+          )
+          wx.hideLoading();
+          wx.navigateBack();
+        }
+      })
+    })
   }
 })

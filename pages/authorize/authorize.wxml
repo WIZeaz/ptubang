@@ -1,0 +1,4 @@
+<!--pages/authorize/authorize.wxml-->
+<view>为了正常使用P图帮，我们需要获得您的微信用户信息，请点击下面的授权按钮。</view>
+
+<view><button open-type="getUserInfo" bindtap="tap"> 授权 </button></view>

@@ -67,5 +67,5 @@ activityId
 </view>
 <view class="editor-navbar">
   <view class="editor-button leftmost color-primary font-normal">取消</view>
-  <view class="editor-button rightmost color-primary font-normal">完成</view>
+  <view class="editor-button rightmost color-primary font-normal" bindtap="saveImage">完成</view>
 </view>

@@ -1,6 +1,9 @@
+import { MyModel } from "./MyModel"
+
 // pages/my/my.js
 const app = getApp()
 
+let myModel=new MyModel();
 Page({
   data: {
     motto: 'Hello World',
@@ -12,12 +15,8 @@ Page({
       "name":"WIZeaz",
       "profilePhotoUrl":"/resources/icons/ic_chat_black_48dp.png"
     },
-    
-
-
-    "imgUrl1":"/resources/image/my/bpic1.jpg",
-    "imgUrl2":"/resources/image/my/bpic2.jpg",
-    "like":12,
+    attendedActivities:[],
+    myActivities:[],
     "num_of_start_ac":2,
     "num_of_join_ac":2,
     "my_join_ac":"我参与的活动",
@@ -26,6 +25,7 @@ Page({
     "num_of_join_people2":24,
     "num_of_join_people3":34,
     "num_of_join_people4":9,
+    "total_like":12,
     "tabBar": {
       "list": [{
         "pagePath": "activity",
@@ -78,6 +78,16 @@ Page({
         }
       })
     }
+
+  },
+  onShow(){
+        //获取活动
+        myModel.myActivities((res)=>{
+          this.setData({myActivities:res});
+        });
+        myModel.attendActivities(res=>{
+          this.setData({attendedActivities:res});
+        })
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -92,6 +102,12 @@ Page({
   },
   index2:function(){
     this.setData({ index:false})
+  },
+  gotoActivity:function(e){
+    let id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/activity/activity?id='+id.toString(),
+    })
   },
   gotoTalkpage1:function()
   {

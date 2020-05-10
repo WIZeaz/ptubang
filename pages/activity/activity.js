@@ -1,4 +1,8 @@
+import { ActivityModel } from "./ActivityModel";
+
 // pages/activity/activity.js
+
+let activityModel=new ActivityModel();
 Page({
 
   /**
@@ -11,6 +15,7 @@ Page({
     like:" ",
     time:["2020年5月4号","2020年4月14号","2020年3月28号"],
     currentIndex:"0",
+    activityId:0,
   test:[{
 
       "user":{
@@ -55,6 +60,18 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
+    this.setData({activityId:options.id});
+    activityModel.getActivity(options.id,res=>{
+      wx.downloadFile({
+        url: res.pic_url,
+        success:res=>{
+          this.setData({
+            img_url:res.tempFilePath
+          })
+        }
+      });
+    });
+
     this.setData({
       img_url:options.img_url,
       like:options.like,
