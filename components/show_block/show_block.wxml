@@ -1,12 +1,13 @@
 
 <block wx:for="{{blockInfo}}" wx:key="index">
   <view class="outer-box">
-    <image class="img" src="{{item.user.profilePhotoUrl}}" mode="widthFix"></image>
-    <view>
+    
       <view class="container1">
-        <!-- <image class="img" src="{{item.user.profilePhotoUrl}}" mode="widthFix"></image> -->
+       <image class="img" src="{{item.user.profilePhotoUrl}}" mode="widthFix"></image>
         <view class="word">{{item.user.name}} 帮你P了图</view>
       </view>
+      <view>
+
       <image class="img" src="{{item.imgUrl}}" mode="widthFix"></image>
       <view class="container2">
         

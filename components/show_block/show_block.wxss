@@ -1,8 +1,9 @@
 /* pages/new/new.wxss */
 .container1{
-
-
-  margin-bottom: 50rpx;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  margin-bottom: 15rpx;
+  
 }
 .container2{
   display: grid;
@@ -35,7 +36,8 @@
 }
 .outer-box{
   display: grid;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 100%;
+  border-bottom: 2px solid #DCDFE6;
 }
 .word{
   color:#409EFF;
