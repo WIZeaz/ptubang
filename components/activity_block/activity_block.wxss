@@ -8,6 +8,7 @@
   box-shadow: 0 10rpx 20rpx #DCDFE6;
   overflow: hidden;
   box-sizing: border-box;
+  margin-bottom: 30rpx;
 }
 .activity-textholder{
   padding: 0 20rpx 0 20rpx;

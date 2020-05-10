@@ -32,7 +32,7 @@
           <activity_block wx:for="{{attendActivities}}" wx-if="{{index%2==0}}" imgUrl="{{item.pic_url}}" time="{{item.time}}" num="{{item.re_num}}" bindtap="gotoActivity" data-id="{{item.id}}" > </activity_block>
         </view>
         <view class="col-6 space-10">
-          <activity_block wx:for="{{attendActivities}}" wx-if="{{index%2==1}}" imgUrl="{{item.pic_url}}" time="三天前" num="{{item.re_num}}" bindtap="gotoActivity" data-id="{{item.id}}" > </activity_block>
+          <activity_block wx:for="{{attendActivities}}" wx-if="{{index%2==1}}" imgUrl="{{item.pic_url}}" time="{{item.time}}" num="{{item.re_num}}" bindtap="gotoActivity" data-id="{{item.id}}" > </activity_block>
         </view>
       </view>
     </view>
@@ -45,7 +45,7 @@
           <activity_block wx:for="{{myActivities}}" wx-if="{{index%2==0}}" imgUrl="{{item.pic_url}}" time="{{item.time}}" num="{{item.re_num}}" bindtap="gotoActivity" data-id="{{item.id}}"> </activity_block>
         </view>
         <view class="col-6 space-10">
-          <activity_block wx:for="{{myActivities}}" wx-if="{{index%2==1}}" imgUrl="{{item.pic_url}}" time="{{item.time}}" num="23" bindtap="gotoActivity" data-id="{{item.id}}"> </activity_block>
+          <activity_block wx:for="{{myActivities}}" wx-if="{{index%2==1}}" imgUrl="{{item.pic_url}}" time="{{item.time}}" num="{{item.re_num}}" bindtap="gotoActivity" data-id="{{item.id}}"> </activity_block>
         </view>
       </view>
     </view>

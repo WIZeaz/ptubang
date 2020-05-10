@@ -84,7 +84,7 @@ Component({
           complete: (res) => {},
         })
         wx.redirectTo({
-          url: '/pages/share_link/share_link',
+          url: '/pages/share_link/share_link?imgUrl='+res,
         });
       });
       /*if (msg!=""){

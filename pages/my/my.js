@@ -17,8 +17,8 @@ Page({
     },
     attendedActivities:[],
     myActivities:[],
-    "num_of_start_ac":2,
-    "num_of_join_ac":2,
+    "num_of_start_ac":0,
+    "num_of_join_ac":0,
     "my_join_ac":"我参与的活动",
     "my_start_ac":"我发起的活动",
     "num_of_join_people1":13,
@@ -83,10 +83,10 @@ Page({
   onShow(){
         //获取活动
         myModel.myActivities((res)=>{
-          this.setData({myActivities:res});
+          this.setData({myActivities:res,num_of_start_ac:res.length});
         });
         myModel.attendActivities(res=>{
-          this.setData({attendedActivities:res});
+          this.setData({attendedActivities:res,num_of_join_ac:res.length});
         })
   },
   getUserInfo: function(e) {

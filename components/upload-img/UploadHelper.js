@@ -30,10 +30,12 @@ class UploadHelper extends Base{
             pic_url:fileUrl,
             title:'none',
             username: app.globalData.userInfo.nickName,
-            userid: app.globalData.user.id,
+            userid: app.globalData.user.id.toString(),
             content:content
           },
-          sCallback:callback
+          sCallback:res=>{
+            callback(fileUrl);
+          }
         });
       }
     });
