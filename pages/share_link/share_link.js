@@ -18,7 +18,8 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (res) {
+    this.setData(res.imgUrl)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

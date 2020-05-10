@@ -17,6 +17,7 @@ Page({
 
     "imgUrl1":"/resources/image/my/bpic1.jpg",
     "imgUrl2":"/resources/image/my/bpic2.jpg",
+    "imgUrl3":"",
     "like":12,
     "num_of_start_ac":2,
     "num_of_join_ac":2,
@@ -39,7 +40,17 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (res) {
+    console.log(res)
+    if(res.url){
+      this.setData({
+        num_of_start_ac:this.data.num_of_start_ac+1,
+        imgUrl3:res.url
+      })
+
+    }
+
+
     wx.getSetting({
       success: function(res){
         if (res.authSetting['scope.userInfo']) {

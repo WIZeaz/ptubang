@@ -28,7 +28,7 @@ Component({
       let temp=this.data.blockInfo//最终效果应该是去服务器刷新一遍拿数据回来
       let index=res.currentTarget.dataset.index//分辨是第几张图片
       temp[index].liked=1-temp[index].liked
-
+      temp[index].like=temp[index].like-1+2*temp[index].liked
       
 
       

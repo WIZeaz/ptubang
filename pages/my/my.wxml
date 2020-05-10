@@ -47,9 +47,25 @@
    </view>
     <view class="col">
     <view class="col-3 x-left margin">每日一刷</view>
-    <view class="col-3 x-right margin">23天前</view>
+    <view class="col-3 x-right margin">15天前</view>
     <view class="col-3 x-left margin">唯美剧照</view>
-    <view class="col-3 x-right margin">1天前</view>
-   </view>    
+    <view class="col-3 x-right margin">2天前</view>
+   </view> 
+
+
+<view wx:if="{{imgUrl3!=''}}">
+    <view class="col">
+    <view class="col-6 x-center button margin"><image class="img" src="{{imgUrl3}}"> </image></view>
+   </view>
+    <view class="col">
+    <view class="col-3 x-left margin">你看我帅吗</view>
+    <view class="col-3 x-right margin">刚刚</view>
+</view>
+   </view> 
+
+  
+
+   
+        
   </view>
 </view>

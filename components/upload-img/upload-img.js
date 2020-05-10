@@ -73,7 +73,7 @@ Component({
           })
           this.triggerEvent("send_msg",{msg:msg},{})
           wx.navigateTo({
-            url: '/pages/share_link/share_link',
+            url: '/pages/share_link/share_link?imgUrl='+this.data.files[0],
           })
           
         }

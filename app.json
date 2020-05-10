@@ -1,13 +1,13 @@
 {
   "pages": [  
-    "pages/index/index",
+    "pages/index/index","pages/editor/editor",
     "pages/share_link/share_link",
     "pages/endpage/endpage",
   
     "pages/invite/invite",
     
     
-    "pages/editor/editor",
+    
     "pages/my/my",
     "pages/logs/logs",
     "pages/info/info",
