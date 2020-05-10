@@ -2,7 +2,7 @@
     <!--invite.wxml-->
 
 <view class="container">
-<showBlock blockInfo="{{test}}">
+<showBlock blockInfo="{{test}}" userInfo="{{userInfo}}">
 </showBlock>
 
 

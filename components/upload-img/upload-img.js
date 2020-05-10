@@ -64,18 +64,19 @@ Component({
       },
       send(res){
         let msg=this.data.info
-        if (msg!="")
-          {this.setData({
+          if (msg!=""){
+          this.triggerEvent("send_msg",{msg:msg},{})
+          console.log(this.data.files)
+          wx.navigateTo({
+            url: '/pages/share_link/share_link?img_url='+this.data.files[0],
+          })
+          
+          this.setData({
             info:"",
             noteNowLen:0,
             files:[]
 
           })
-          this.triggerEvent("send_msg",{msg:msg},{})
-          wx.navigateTo({
-            url: '/pages/share_link/share_link',
-          })
-          
         }
     }
   }

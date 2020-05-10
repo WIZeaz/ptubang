@@ -8,7 +8,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    "blockInfo": Object
+    "blockInfo": Object,
+    "userInfo":String
   },
   /**
    * 组件的初始数据

@@ -55,7 +55,7 @@ Component({
       console.log(index)
       console.log(msg)
       console.log(name)
-      temp[index].comments=temp[index].comments.concat([{userName:name,content:msg}])
+      temp[index].comments=temp[index].comments.concat([{userName:"姜饼。。",content:msg}])
       console.log(temp)
       //temp[index].liked=1-temp[index].liked
       this.setData({

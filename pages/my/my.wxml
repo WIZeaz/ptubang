@@ -29,10 +29,10 @@
     <view class="block">
       <view class="col">
         <view class="col-6 space-10">
-          <activity_block imgUrl="{{imgUrl1}}" time="三天前" num="12" bindtap="gotoTalkpage1"> </activity_block>
+          <activity_block imgUrl="{{imgUrl1}}" time="三天前" num="4" bindtap="gotoTalkpage1"> </activity_block>
         </view>
         <view class="col-6 space-10">
-          <activity_block imgUrl="{{imgUrl2}}" time="三天前" num="23" bindtap="gotoTalkpage2"> </activity_block>
+          <activity_block imgUrl="{{imgUrl2}}" time="三天前" num="13" bindtap="gotoTalkpage2"> </activity_block>
         </view>
       </view>
     </view>

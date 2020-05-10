@@ -1,7 +1,7 @@
 Page({
   data: {
     motto: 'Hello World',
-    userInfo: {},
+    userInfo: "",
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     test:{
@@ -18,8 +18,16 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
+  onLoad: function (res) {
+
+    console.log(res)
+    this.setData(
+      {
+        userInfo:res.img_url
+      }
+    )
+     console.log(this.data.userInfo)
+   /* if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
@@ -44,7 +52,7 @@ Page({
           })
         }
       })
-    }
+    }*/
   },
   getUserInfo: function(e) {
     console.log(e)
